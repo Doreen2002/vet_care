@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-03 09:38:08.118384",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_fjkp",
+  "client",
+  "amended_from",
+  "column_break_msfp",
+  "patient",
+  "column_break_aiwk",
+  "date",
+  "section_break_dccy",
+  "adress",
+  "mobile",
+  "cpr",
+  "email",
+  "column_break_vhaq",
+  "breed",
+  "body_weight",
+  "color",
+  "gender",
+  "section_break_drny",
+  "comments_written_by_the_veterinarian_that_i_approve",
+  "owner_or_the_responsible_party"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_fjkp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "GROOMING WITH SEDATION FORM",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Data",
+   "label": "CLIENT"
+  },
+  {
+   "fieldname": "column_break_msfp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Data",
+   "label": "PATIENT"
+  },
+  {
+   "fieldname": "column_break_aiwk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "DATE"
+  },
+  {
+   "fieldname": "section_break_dccy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "adress",
+   "fieldtype": "Data",
+   "label": "ADRESS"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "MOBILE"
+  },
+  {
+   "fieldname": "cpr",
+   "fieldtype": "Data",
+   "label": "CPR"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "EMAIL"
+  },
+  {
+   "fieldname": "column_break_vhaq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "breed",
+   "fieldtype": "Data",
+   "label": "BREED"
+  },
+  {
+   "fieldname": "body_weight",
+   "fieldtype": "Float",
+   "label": "BODY WEIGHT"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "COLOR"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "GENDER",
+   "options": "Female\nMale"
+  },
+  {
+   "fieldname": "section_break_drny",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comments_written_by_the_veterinarian_that_i_approve",
+   "fieldtype": "Small Text",
+   "label": "Comments written by the veterinarian that I approve"
+  },
+  {
+   "fieldname": "owner_or_the_responsible_party",
+   "fieldtype": "Signature",
+   "label": "OWNER OR THE RESPONSIBLE PARTY"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-03 09:43:35.648884",
+ "modified_by": "Administrator",
+ "module": "Vet Care",
+ "name": "GROOMING WITH SEDATION FORM",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
