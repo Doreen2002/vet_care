@@ -1157,7 +1157,7 @@
   "parenttype": null,
   "property": "search_fields",
   "property_type": "Data",
-  "value": "customer_name,vc_cpr,vc_home_phone,vc_office_phone,mobile_number,mobile_number_2,email_info,vc_cirrusvet"
+  "value": "customer_name,vc_cpr"
  },
  {
   "_assign": null,
@@ -1197,7 +1197,7 @@
   "parenttype": null,
   "property": "search_fields",
   "property_type": "Data",
-  "value": "patient_name,mobile,email,phone,vc_cirrusvet,vc_chip_id"
+  "value": "patient_name,mobile,email,phone"
  },
  {
   "_assign": null,
@@ -1216,7 +1216,7 @@
   "parentfield": null,
   "parenttype": null,
   "property": "sort_field",
-  "property_type": "Data",
-  "value": "vc_cirrusvet"
+  "property_type": "Data"
+ 
  }
 ]
