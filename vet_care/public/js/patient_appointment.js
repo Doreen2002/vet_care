@@ -1,4 +1,4 @@
-var check_and_set_availability = function(frm) {
+check_and_set_availability = function(frm) {
   var selected_slot = null;
   var service_unit = null;
   var duration = null;
@@ -110,10 +110,11 @@ var check_and_set_availability = function(frm) {
       fd.available_slots.html("");
       frappe.call({
         method:
-          "erpnext.healthcare.doctype.patient_appointment.patient_appointment.get_availability_data",
+          "healthcare.healthcare.doctype.patient_appointment.patient_appointment.get_availability_data",
         args: {
           practitioner: d.get_value("practitioner"),
-          date: d.get_value("appointment_date")
+          date: d.get_value("appointment_date"),
+          appointment : frm.doc.name
         },
         callback: r => {
           var data = r.message;
