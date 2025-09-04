@@ -13,7 +13,7 @@ frappe.ui.form.on('Animal Overview', {
     onload: function(frm) {
         frm.set_query('default_owner', function() {
             return {
-                query: "erpnext.controllers.queries.customer_query",
+                query: "vet_care.vet_care.doctype.animal_overview.animal_overview.customer_query",
             };
         });
         get_tax_rate().then((data) => _tax_rate = data);
