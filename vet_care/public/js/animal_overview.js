@@ -44,12 +44,14 @@ frappe.ui.form.on('Animal Overview', {
     }
 });
 
-frappe.ui.form.on('Animal Overview Item', 'uom', function (frm, cdt, cdn) {
+frappe.ui.form.on('Animal Overview Item', 'item_code', function (frm, cdt, cdn) {
     var child = locals[cdt][cdn];
 
     if (!child.uom ) {
         frappe.throw("Please enter UOM");
-    } else {
+    } 
+
+    else {
         frappe.call({
             method: 'vet_care.api.get_item_uoms_conversion',
             args: {
