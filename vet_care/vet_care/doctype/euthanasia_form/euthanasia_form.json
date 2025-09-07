@@ -1,36 +1,45 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-09-03 09:50:21.598232",
+ "creation": "2025-09-07 11:19:32.115567",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "section_break_vnnf",
+  "amended_from",
   "clients_name",
-  "patients_name",
-  "column_break_xdna",
-  "cpr_no",
   "mobile_no",
-  "column_break_sevy",
-  "date",
+  "email",
+  "column_break_yhcc",
+  "cpr_no",
   "address",
-  "section_break_iosq",
+  "section_break_zgft",
+  "patients_name",
   "species",
   "sex",
   "color",
   "microchip_number",
-  "column_break_qlbr",
+  "column_break_yzks",
+  "dob_age",
   "breed",
   "spayedneutered",
-  "body_wt",
-  "name_and_date_of_last_vaccine",
-  "section_break_zncn",
-  "name_and_date_of_last_deworming",
-  "any_allergies",
-  "column_break_hrjm",
-  "regular_diet",
-  "previous_veterinarian"
+  "body_wt"
  ],
  "fields": [
+  {
+   "fieldname": "section_break_vnnf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Euthanasia Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
   {
    "fieldname": "clients_name",
    "fieldtype": "Link",
@@ -38,7 +47,17 @@
    "options": "Customer"
   },
   {
-   "fieldname": "column_break_xdna",
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "MOBILE NO"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "EMAIL"
+  },
+  {
+   "fieldname": "column_break_yhcc",
    "fieldtype": "Column Break"
   },
   {
@@ -47,33 +66,19 @@
    "label": "CPR No"
   },
   {
-   "fieldname": "mobile_no",
-   "fieldtype": "Data",
-   "label": "MOBILE NO"
-  },
-  {
-   "fieldname": "column_break_sevy",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "address",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "ADDRESS"
+  },
+  {
+   "fieldname": "section_break_zgft",
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "patients_name",
    "fieldtype": "Link",
    "label": "PATIENTS NAME",
    "options": "Patient"
-  },
-  {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "label": "Date"
-  },
-  {
-   "fieldname": "section_break_iosq",
-   "fieldtype": "Section Break"
   },
   {
    "fieldname": "species",
@@ -84,7 +89,7 @@
    "fieldname": "sex",
    "fieldtype": "Select",
    "label": "SEX",
-   "options": "Male\nFemale"
+   "options": "Female\nMale"
   },
   {
    "fieldname": "color",
@@ -97,8 +102,13 @@
    "label": "MICROCHIP NUMBER"
   },
   {
-   "fieldname": "column_break_qlbr",
+   "fieldname": "column_break_yzks",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dob_age",
+   "fieldtype": "Data",
+   "label": "DOB/AGE"
   },
   {
    "fieldname": "breed",
@@ -114,49 +124,17 @@
   {
    "fieldname": "body_wt",
    "fieldtype": "Float",
-   "label": "BODY Wt."
-  },
-  {
-   "fieldname": "name_and_date_of_last_vaccine",
-   "fieldtype": "Small Text",
-   "label": "NAME AND DATE OF LAST VACCINE"
-  },
-  {
-   "fieldname": "section_break_zncn",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "name_and_date_of_last_deworming",
-   "fieldtype": "Small Text",
-   "label": "NAME AND DATE OF LAST DEWORMING"
-  },
-  {
-   "fieldname": "any_allergies",
-   "fieldtype": "Small Text",
-   "label": "ANY ALLERGIES"
-  },
-  {
-   "fieldname": "column_break_hrjm",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "regular_diet",
-   "fieldtype": "Small Text",
-   "label": "REGULAR DIET"
-  },
-  {
-   "fieldname": "previous_veterinarian",
-   "fieldtype": "Small Text",
-   "label": "PREVIOUS VETERINARIAN"
+   "label": "BODY Wt"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-09-07 11:18:20.068800",
+ "modified": "2025-09-07 11:24:31.405544",
  "modified_by": "Administrator",
  "module": "Vet Care",
- "name": "MY PETS - REGISTRATION FORM",
+ "name": "Euthanasia Form",
  "owner": "Administrator",
  "permissions": [
   {
@@ -169,6 +147,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

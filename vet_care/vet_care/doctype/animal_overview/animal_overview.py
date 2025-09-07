@@ -8,6 +8,7 @@ from frappe import _
 from toolz import compose, first, pluck
 from frappe.model.document import Document
 from functools import partial
+
 from frappe.desk.reportview import get_match_cond, get_filters_cond
 from erpnext.controllers.queries import get_fields
 class AnimalOverview(Document):
