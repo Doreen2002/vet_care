@@ -3,7 +3,7 @@ frappe.ui.form.on('Patient', {
         // Remove Under Development
         $('.sidebar-menu > p').empty();
         frm.set_query('customer', 'vc_pet_relation', function() {
-            return { query: "erpnext.controllers.queries.customer_query" };
+            return { query: "vet_care.vet_care.doctype.animal_overview.animal_overview.customer_query" };
         });
     },
     refresh: function(frm) {

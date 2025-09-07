@@ -1,0 +1,230 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-02 09:20:26.190792",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "column_break_nksc",
+  "pet_name",
+  "column_break_faes",
+  "pet_owner",
+  "section_break_shap",
+  "follow_up_visit_date",
+  "column_break_tchd",
+  "owner_phone_no",
+  "section_break_wxmv",
+  "diagnosis",
+  "outpatient_medicines_with_instructions_section",
+  "1",
+  "3",
+  "column_break_deqs",
+  "2",
+  "4",
+  "status_of_pet_condition_at_the_time_of_discharge_section",
+  "fully_recovered",
+  "column_break_zymy",
+  "in_recovery_phase",
+  "diet_section",
+  "normal",
+  "column_break_dgvc",
+  "other",
+  "data_pkef",
+  "exercise_section",
+  "no_restrictions",
+  "column_break_bwip",
+  "others",
+  "data_wqug",
+  "special_instructions_if_any_section",
+  "small_text_mplj"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_nksc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pet_name",
+   "fieldtype": "Data",
+   "label": "Pet Name"
+  },
+  {
+   "fieldname": "column_break_faes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pet_owner",
+   "fieldtype": "Data",
+   "label": "Pet Owner"
+  },
+  {
+   "fieldname": "section_break_shap",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "follow_up_visit_date",
+   "fieldtype": "Date",
+   "label": "Follow Up Visit Date"
+  },
+  {
+   "fieldname": "column_break_tchd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "owner_phone_no",
+   "fieldtype": "Phone",
+   "label": "Owner Phone no"
+  },
+  {
+   "fieldname": "section_break_wxmv",
+   "fieldtype": "Section Break",
+   "label": "Follow these pet recovery instructions."
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Small Text",
+   "label": "Diagnosis"
+  },
+  {
+   "fieldname": "outpatient_medicines_with_instructions_section",
+   "fieldtype": "Section Break",
+   "label": "Outpatient medicines with instructions"
+  },
+  {
+   "fieldname": "1",
+   "fieldtype": "Data",
+   "label": "1"
+  },
+  {
+   "fieldname": "3",
+   "fieldtype": "Data",
+   "label": "3"
+  },
+  {
+   "fieldname": "column_break_deqs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "2",
+   "fieldtype": "Data",
+   "label": "2"
+  },
+  {
+   "fieldname": "4",
+   "fieldtype": "Data",
+   "label": "4"
+  },
+  {
+   "fieldname": "status_of_pet_condition_at_the_time_of_discharge_section",
+   "fieldtype": "Section Break",
+   "label": "Status of pet condition at the time of discharge"
+  },
+  {
+   "default": "0",
+   "fieldname": "fully_recovered",
+   "fieldtype": "Check",
+   "label": "Fully Recovered"
+  },
+  {
+   "fieldname": "column_break_zymy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "in_recovery_phase",
+   "fieldtype": "Check",
+   "label": "In recovery phase"
+  },
+  {
+   "fieldname": "diet_section",
+   "fieldtype": "Section Break",
+   "label": "Diet"
+  },
+  {
+   "default": "0",
+   "fieldname": "normal",
+   "fieldtype": "Check",
+   "label": "Normal"
+  },
+  {
+   "fieldname": "column_break_dgvc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "other",
+   "fieldtype": "Check",
+   "label": "Other"
+  },
+  {
+   "fieldname": "data_pkef",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "exercise_section",
+   "fieldtype": "Section Break",
+   "label": "Exercise"
+  },
+  {
+   "default": "0",
+   "fieldname": "no_restrictions",
+   "fieldtype": "Check",
+   "label": "No restrictions"
+  },
+  {
+   "fieldname": "column_break_bwip",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "others",
+   "fieldtype": "Check",
+   "label": "Others"
+  },
+  {
+   "fieldname": "data_wqug",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "special_instructions_if_any_section",
+   "fieldtype": "Section Break",
+   "label": "Special instructions, if any"
+  },
+  {
+   "fieldname": "small_text_mplj",
+   "fieldtype": "Small Text"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-02 18:23:51.554201",
+ "modified_by": "Administrator",
+ "module": "Vet Care",
+ "name": "Discharge Form",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

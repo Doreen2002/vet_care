@@ -8,26 +8,7 @@
 //             ]
 //         }
 //     }
-this.frm.cscript.onload = function (frm) {
-    this.frm.set_query("batch_no", "items", function (doc, cdt, cdn) {
-        let d = locals[cdt][cdn];
-        if (!d.item_code) {
-            frappe.msgprint(__("Please select Item Code"));
-        }
-        else if (!d.warehouse) {
-            frappe.msgprint(__("Please select source warehouse"));
-        }
-        else {
-            return {
-                query: "vet_care.doc_events.animal_overview.get_batch_no",
-                filters: {
-                    'item_code': d.item_code,
-                    'warehouse': d.warehouse
-                }
-            }
-        }
-    });  
-}
+
 
 frappe.ui.form.on('Animal Overview', {
     setup: function (frm, cdt, cdn) {
@@ -40,15 +21,37 @@ frappe.ui.form.on('Animal Overview', {
                 }
             };    
         }
+    },
+    onload: function (frm) {
+        this.frm.set_query("batch_no", "items", function (doc, cdt, cdn) {
+            let d = locals[cdt][cdn];
+            if (!d.item_code) {
+                frappe.msgprint(__("Please select Item Code"));
+            }
+            else if (!d.warehouse) {
+                frappe.msgprint(__("Please select source warehouse"));
+            }
+            else {
+                return {
+                    query: "vet_care.doc_events.animal_overview.get_batch_no",
+                    filters: {
+                        'item_code': d.item_code,
+                        'warehouse': d.warehouse
+                    }
+                }
+            }
+        });  
     }
 });
 
-frappe.ui.form.on('Animal Overview Item', 'uom', function (frm, cdt, cdn) {
+frappe.ui.form.on('Animal Overview Item', 'item_code', function (frm, cdt, cdn) {
     var child = locals[cdt][cdn];
 
-    if (!child.uom) {
+    if (!child.uom ) {
         frappe.throw("Please enter UOM");
-    } else {
+    } 
+
+    else {
         frappe.call({
             method: 'vet_care.api.get_item_uoms_conversion',
             args: {

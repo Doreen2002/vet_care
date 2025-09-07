@@ -7,7 +7,7 @@ frappe.ui.form.on('Patient Booking', {
 	onload: function(frm) {
 		frm.set_query('customer', function() {
 			return {
-				query: "erpnext.controllers.queries.customer_query",
+				query: "vet_care.vet_care.doctype.animal_overview.animal_overview.customer_query",
 			};
 		});
 	},
