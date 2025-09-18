@@ -3,43 +3,88 @@ frappe.pages['book-patient-appoint'].on_page_load = function(wrapper) {
 		parent: wrapper,
 		title: 'Patient Appoinment Booking',
 		single_column: true
-	});
-	// page.add_field({
-	// 	label: 'Healthcare Practitioner',
-	// 	fieldtype: 'Link',
-	// 	fieldname: 'healthcare_practitioner',
-	// 	options: 'Healthcare Practitioner',
-	// 	change() {
 
-			
-	// 	}
-	// });
-	
-	let calendar_area = $(`<div id="calendar"></div>`).appendTo(page.body);
+	});
+	page.add_field({
+		label: 'Select Physician',
+		fieldtype: 'HTML',
+		fieldname: 'calendar_area',
+		options: '<div >Select Physician</div>',
+		width:'250'
+		
+	});
+	page.add_field({
+		label: 'Healthcare Practitioner',
+		fieldtype: 'Link',
+		fieldname: 'healthcare_practitioner',
+		options: 'Healthcare Practitioner',
+		width:'600',
+		change() {
+			let calendar_area = $(`<div id="calendar"></div>`).appendTo(page.body);
 
 	frappe.call({
 		method: "vet_care.custom_code.api.get_room_events", // you'll define this
-		args: {},
+		args: {
+			"healthcare_practitioner": page.fields_dict.healthcare_practitioner.get_value()
+		},
 		callback: function(r) {
 			const { users, events } = r.message;
+
+			var current_time = frappe.datetime.now_time();
+
+			var time_parts = current_time.split(":");
+			var hours = parseInt(time_parts[0]);
+			var minutes = parseInt(time_parts[1]);
+			var seconds = parseInt(time_parts[2]);
+
+		
+			var date_obj = new Date();
+			date_obj.setHours(hours);
+			date_obj.setMinutes(minutes);
+			date_obj.setSeconds(seconds);
+
+			
+			date_obj.setHours(date_obj.getHours() + 1);
+
+			
+			var one_hour_later = frappe.datetime.get_time(date_obj);
+
+			
+
+
+
 
 			const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
 				schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
 				editable: true,
   				selectable: true,
-				initialView: 'resourceTimeGridDay',
+				initialView: 'oneHourView',
+	
 				headerToolbar: {
 				  left: 'prev,next today',
 				  center: 'title',
-				  right: 'resourceTimeGridDay,resourceTimeGridWeek' 
+				  right: 'oneHourView, resourceTimeGridDay,resourceTimeGridWeek' 
 				},
+				
 				views: {
+					
+					oneHourView: {
+						type: 'resourceTimeGridDay', 
+						buttonText: 'Hourly',
+						slotMinTime: current_time,     
+						slotMaxTime: one_hour_later, 
+
+					  },
+					
 				  resourceTimeGridDay: {
 					buttonText: 'Day'
 				  },
 				  resourceTimeGridWeek: {
 					buttonText: 'Week'
-				  }
+				  },
+				 
+				
+				
 				},			  
 				resourceAreaHeaderContent: 'Healthcare Practitioner',
 				resources: users,
@@ -47,8 +92,9 @@ frappe.pages['book-patient-appoint'].on_page_load = function(wrapper) {
 			
 			});
 			calendar.on('dateClick', function(info) {
+				console.log("info", info);
 				apointment_info = {
-					user: info.resource.id,
+					healthcare_practitioner: info.resource.id,
 					start: frappe.datetime.get_datetime_as_string(info.date),
 					end: info.endStr
 
@@ -60,6 +106,11 @@ frappe.pages['book-patient-appoint'].on_page_load = function(wrapper) {
 			calendar.render();
 		}
 	});
+		}
+	});
+	
+	
+	
 }
 
 
@@ -99,6 +150,7 @@ function bookAppointment(info) {
 				fieldtype: 'Link',
 				options:'Healthcare Practitioner',
 				reqd: true,
+				default:info.healthcare_practitioner
 			},
 			{
 				label: 'Appointment Type',

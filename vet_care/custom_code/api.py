@@ -1,10 +1,10 @@
 import frappe
 
 @frappe.whitelist()
-def get_room_events():
+def get_room_events(healthcare_practitioner):
     formatted_events = []
-    users = frappe.db.get_all("Healthcare Practitioner",  fields=["name as id", "practitioner_name as title"])
-    event_partcipants = frappe.db.get_all("Event Participants",  fields=["parent as id",  "reference_docname as resourceId"])
+    users = frappe.db.get_list("Healthcare Practitioner", filters={"name":healthcare_practitioner},  fields=["name as id", "practitioner_name as title"])
+    event_partcipants = frappe.db.get_all("Event Participants",  filters={"reference_docname":healthcare_practitioner} , fields=["parent as id",  "reference_docname as resourceId"])
     events = frappe.db.get_all("Event", filters={"event_type": "Public"}, fields=["name as id", "subject as title", "starts_on as start", "ends_on as end"])
     for event in events:
         for event_partcipant in event_partcipants:
