@@ -37,6 +37,7 @@ fixtures = [
                     "Patient-vc_rod",
                     "Patient-vc_nutrition",
                     "Sales Invoice-patient_name",
+                    "Sales Invoice-patient",
                     "Customer-vc_cpr",
                     "Customer-vc_cirrusvet",
                     "Patient-vc_cirrusvet",
