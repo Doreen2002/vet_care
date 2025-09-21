@@ -17,7 +17,14 @@
   "breed",
   "body_weight",
   "color",
-  "gender"
+  "gender",
+  "section_break_nrtx",
+  "terms_and_conditions",
+  "agree_to_terms_and_conditions",
+  "section_break_pwej",
+  "e_and__name_veterinarian",
+  "column_break_zpzd",
+  "owner_or_the_responsible_party"
  ],
  "fields": [
   {
@@ -47,8 +54,9 @@
   },
   {
    "fieldname": "invoice_no",
-   "fieldtype": "Data",
-   "label": "Invoice no"
+   "fieldtype": "Table MultiSelect",
+   "label": "Invoice no",
+   "options": "Sales Invoice MultiSelect"
   },
   {
    "fieldname": "column_break_nvua",
@@ -61,8 +69,9 @@
   },
   {
    "fieldname": "patient",
-   "fieldtype": "Data",
-   "label": "Patient"
+   "fieldtype": "Table MultiSelect",
+   "label": "Patient",
+   "options": "Patient MultiSelect"
   },
   {
    "fieldname": "breed",
@@ -84,12 +93,47 @@
    "fieldtype": "Select",
    "label": "Gender",
    "options": "Male\nFemale"
+  },
+  {
+   "fieldname": "section_break_nrtx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "HTML",
+   "options": "<div>\n<div>\n<div>I am responsible for the above-described animal (Patient) and have the ability to give you my permission to hospitalize either under anesthesia,\nreceive, prescribe for treatment or operate upon my pet if needed. </div>\n<div style=\"text-align:right;\">\n\u0623\u0646\u0627 \u0627\u0644\u0645\u0633\u0624\u0648\u0644 \u0639\u0646 \u0627\u0644\u062d\u064a\u0648\u0627\u0646 \u0627\u0644\u0645\u0648\u0635\u0648\u0641 \u0623\u0639\u0627\u0644\u0647 )\u0627\u0644\u0645\u0631\u064a\u0636( \u0627\u0623\u0644\u0644\u064a\u0641 \u0625\u0646\n\u064a\n\u064a \u0648\u0635\u0641 \u0627\u0644\u0639\u0627\u0644\u062c \u0623\u0648 \u0625\u062c\u0631\u0627\u0621 \u0639\u0645\u0644\u064a\u0629 \u062c\u0631\u0627\u062d\u064a\u0629 \u0644\u062d\u064a\u0648\u0627\u0646 \u0649\n\u0625\u0645\u0627 \u062a\u062d\u062a \u0627\u0644\u062a\u062e\u062f\u064a\u0631 \u0623\u0648 \u062a\u0644\u0641\n\u0644\u0644\u062f\u062e\u0648\u0644 \u0625\u0649\u0644 \u0627\u0644\u0645\u0633\u062a\u0634\u0641 \u0649\n\u064a\n\u0648\u0644\u062f\u064a \u0627\u0644\u0642\u062f\u0631\u0629 \u0639\u0649\u0644 \u0645\u0646\u062d\u0643 \u0625\u0630\u0646 \u0649\n\u0644\u0632\u0645 \u0627\u0623\u0644\u0645\u0631</div>\n </div>\n\n</div>"
+  },
+  {
+   "default": "0",
+   "fieldname": "agree_to_terms_and_conditions",
+   "fieldtype": "Check",
+   "label": "Agree to Terms and Conditions"
+  },
+  {
+   "fieldname": "section_break_pwej",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "e_and__name_veterinarian",
+   "fieldtype": "Signature",
+   "label": " VETERINARIAN NAME & SIGNATURE"
+  },
+  {
+   "fieldname": "column_break_zpzd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "owner_or_the_responsible_party",
+   "fieldtype": "Signature",
+   "label": "OWNER OR THE RESPONSIBLE PARTY"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-03 09:47:25.009236",
+ "modified": "2025-09-20 13:52:27.638567",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Admission Form",

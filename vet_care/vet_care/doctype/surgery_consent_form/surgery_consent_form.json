@@ -15,7 +15,14 @@
   "gender",
   "body_weight",
   "color",
-  "microchip_no"
+  "microchip_no",
+  "section_break_fnim",
+  "html_vltg",
+  "agree_to_terms_and_conditions",
+  "section_break_qhrj",
+  "owner_signature",
+  "column_break_jmrd",
+  "veterinarian_signature"
  ],
  "fields": [
   {
@@ -40,8 +47,9 @@
   },
   {
    "fieldname": "invoice_no",
-   "fieldtype": "Data",
-   "label": "Invoice No"
+   "fieldtype": "Table MultiSelect",
+   "label": "Invoice No",
+   "options": "Patient MultiSelect"
   },
   {
    "fieldname": "column_break_lhqz",
@@ -49,8 +57,9 @@
   },
   {
    "fieldname": "patient",
-   "fieldtype": "Data",
-   "label": "Patient"
+   "fieldtype": "Table MultiSelect",
+   "label": "Patient",
+   "options": "Patient MultiSelect"
   },
   {
    "fieldname": "gender",
@@ -72,12 +81,47 @@
    "fieldname": "microchip_no",
    "fieldtype": "Data",
    "label": "Microchip No"
+  },
+  {
+   "fieldname": "section_break_fnim",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_vltg",
+   "fieldtype": "HTML",
+   "options": "<div>\nI give voluntary and informed consent to My Pets Veterinary Center for my pet to undergo the treatments, surgery,\nor any Services. I am aware that if my animal has any fleas, ticks, or other external or internal parasites, he/she\nwill be treated at my expense.\nFor the Pets safety, My Pets Veterinary Center recommend doing a blood test for a patient prior to surgery which\nwill check the conditions of the animal's heart, kidney, and liver.\nDo you accept to do Blood test? Yes ____ No_______ I the owner of the pet acknowledge that there are certain\nrisks going into surgery without checking the condition of these organs and the clinic is not at fault should something\nhappen.\nMy Pets Veterinary Center requires your pet be fasted prior to anesthesia No food or water or medications should\nbe given before /after the surgery and to follow the veterinarian advice strictly.\nDoes your pet have a history of seizures or any other Health issues? No _____\nYes _____________________________________________________________\nI authorize the use of anesthesia and other medication as deemed necessary by the veterinarian. My Pets\nVeterinary Center may require pain management before, during, and after surgery.\nI consent to the use of these medications and understand it may be necessary to give my pet post-operative\nmedication at home.\nI have been advised as to the nature of this procedure to be performed and the risks involved. I understand also\nthat there is always a risk associated with anesthesia, even in apparently healthy animals, and have discussed any\nconcerns with my veterinarian. I understand that it may be necessary to provide emergency medical and/or surgical\nprocedures which are not anticipated for the safety and care of my pet. I hereby consent to and authorize the\nperformance of such altered and/or additional procedures as are necessary in the veterinarian\u2019s professional\njudgement. I hereby certify that I have read and fully understand the above authorization for medical and/or surgical\ntreatment, the reasons why surgery is necessary, its advantages and possible complications. The attending\nveterinarian will use reasonable precautions for the well-being of my pet but will not be held liable for conditions\nbeyond his/her control.\nMy signature on this consent form indicates that any questions have been answered to my satisfaction. I authorize\nMy Pets Veterinary Center to perform any additional diagnostic, treatment, or surgical procedure(s) deemed\nnecessary for medical complications or otherwise unforeseen circumstances. I understand there are rare\ncomplications associated with any anesthetic procedure. No warranty or guarantee has been given to me as to the\nresults or cure afforded by these treatments or procedures. I fully understand these risks and understand the\nveterinarians and hospital staff will try to minimize such risks. I will not hold My Pets Veterinary Center, the\nveterinarians, or any staff member liable for any complications that may arise.\nI agree to be responsible for any charges incurred while my pet is in the care of My Pets Veterinary Center, a\ntreatment care plan has been provided to me, and I understand all payment will be in advance and if any extra due\nwill be paid at the time my pet is discharged from the clinic. I understand that if my pet requires overnight roundthe-clock specialty or emergency care, I may be referred to a 24-hour emergency veterinary hospital and my pet\nwill require owner-provided transportation prior to the end of day at My Pets Veterinary Center.\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026..\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.\n</div>"
+  },
+  {
+   "default": "0",
+   "fieldname": "agree_to_terms_and_conditions",
+   "fieldtype": "Check",
+   "label": "Agree to Terms and Conditions"
+  },
+  {
+   "fieldname": "section_break_qhrj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "owner_signature",
+   "fieldtype": "Signature",
+   "label": "Owner/Agent authorization & acceptance signature "
+  },
+  {
+   "fieldname": "column_break_jmrd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "veterinarian_signature",
+   "fieldtype": "Signature",
+   "label": "Veterinarian Name & Signature"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-03 09:54:58.314445",
+ "modified": "2025-09-20 13:58:09.657525",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Surgery Consent Form",
