@@ -23,7 +23,13 @@
   "dob_age",
   "breed",
   "spayedneutered",
-  "body_wt"
+  "body_wt",
+  "invoice",
+  "section_break_wsps",
+  "html_dhij",
+  "agree_to_terms_and_conditions",
+  "section_break_uwwh",
+  "owner_or_responsible_party"
  ],
  "fields": [
   {
@@ -76,9 +82,9 @@
   },
   {
    "fieldname": "patients_name",
-   "fieldtype": "Link",
+   "fieldtype": "Table MultiSelect",
    "label": "PATIENTS NAME",
-   "options": "Patient"
+   "options": "Patient MultiSelect"
   },
   {
    "fieldname": "species",
@@ -125,13 +131,44 @@
    "fieldname": "body_wt",
    "fieldtype": "Float",
    "label": "BODY Wt"
+  },
+  {
+   "fieldname": "invoice",
+   "fieldtype": "Table MultiSelect",
+   "label": "Invoice",
+   "options": "Sales Invoice MultiSelect"
+  },
+  {
+   "fieldname": "section_break_wsps",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_dhij",
+   "fieldtype": "HTML",
+   "options": "<div>\n</div>"
+  },
+  {
+   "default": "0",
+   "fieldname": "agree_to_terms_and_conditions",
+   "fieldtype": "Check",
+   "label": "Agree to Terms and Conditions"
+  },
+  {
+   "fieldname": "section_break_uwwh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "owner_or_responsible_party",
+   "fieldtype": "Signature",
+   "label": "Owner or Responsible Party"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-07 11:24:31.405544",
+ "modified": "2025-09-20 14:03:57.548815",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Euthanasia Form",

@@ -10,6 +10,7 @@
   "amended_from",
   "column_break_msfp",
   "patient",
+  "invoices",
   "column_break_aiwk",
   "date",
   "section_break_dccy",
@@ -22,6 +23,10 @@
   "body_weight",
   "color",
   "gender",
+  "vet_name",
+  "section_break_uxvh",
+  "html_eyfd",
+  "agree_to_terms_and_conditions",
   "section_break_drny",
   "comments_written_by_the_veterinarian_that_i_approve",
   "owner_or_the_responsible_party"
@@ -52,8 +57,9 @@
   },
   {
    "fieldname": "patient",
-   "fieldtype": "Data",
-   "label": "PATIENT"
+   "fieldtype": "Table MultiSelect",
+   "label": "PATIENT",
+   "options": "Patient MultiSelect"
   },
   {
    "fieldname": "column_break_aiwk",
@@ -123,16 +129,43 @@
    "label": "Comments written by the veterinarian that I approve"
   },
   {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
    "fieldname": "owner_or_the_responsible_party",
    "fieldtype": "Signature",
    "label": "OWNER OR THE RESPONSIBLE PARTY"
+  },
+  {
+   "fieldname": "invoices",
+   "fieldtype": "Table MultiSelect",
+   "label": "Invoices",
+   "options": "Sales Invoice MultiSelect"
+  },
+  {
+   "fieldname": "section_break_uxvh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_eyfd",
+   "fieldtype": "HTML",
+   "options": "<div>\nI am responsible for the above described animal and have the ability to give you my\npermission to groom under anesthesia\nI acknowledge that there are certain risks to anesthesia and treatment that could involve\nserious bodily injury or death to my pet and that these risks are present in any procedure that\nrequires a general or intravenous anesthetics and treatment. I agree to the use of anesthesia as\nconsidered necessary and advisable by the Veterinarian.\nI am aware that upon grooming skin problem may be observed by the groomer and if such\narises I have to be informed and I shall bring my pet to the veterinarian in the establishment and\nshall not make issues that the establishment was responsible for such action.\nI am aware that this is a veterinary center that my pet is not alone in the grooming room\nor other rooms and other patient exist in the same room. The establishment has made all\nprecautionary measures for preventing contamination / infestation of diseases according to their\ncapabilities.\nComments written by the veterinarian that I approve:\n__________________________________________________________________________________\n__________________________________________________________________________________\n__________________________________________________________________________________\n__________________________________________________________________________________\nI as an owner shall accept the consequence of what happens. Libel nor slander is\nnot tolerated in this establishment specifically without proper investigation nor advised from the\nestablishment itself.\nAfter carefully reading the above I shall sign in agreement</div>"
+  },
+  {
+   "default": "0",
+   "fieldname": "agree_to_terms_and_conditions",
+   "fieldtype": "Check",
+   "label": "Agree to Terms and Conditions"
+  },
+  {
+   "fieldname": "vet_name",
+   "fieldtype": "Data",
+   "label": "VET NAME"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-03 09:43:35.648884",
+ "modified": "2025-09-20 14:12:04.104402",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "GROOMING WITH SEDATION FORM",
