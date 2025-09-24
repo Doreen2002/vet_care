@@ -6,36 +6,44 @@
  "engine": "InnoDB",
  "field_order": [
   "clients_name",
-  "patients_name",
-  "column_break_xdna",
+  "customer",
   "cpr_no",
+  "column_break_xdna",
+  "date",
   "mobile_no",
   "column_break_sevy",
-  "date",
   "address",
   "section_break_iosq",
+  "patients_name",
+  "patient",
   "species",
   "sex",
-  "color",
   "microchip_number",
   "column_break_qlbr",
   "breed",
   "spayedneutered",
   "body_wt",
-  "name_and_date_of_last_vaccine",
+  "color",
   "section_break_zncn",
+  "name_and_date_of_last_vaccine",
   "name_and_date_of_last_deworming",
   "any_allergies",
   "column_break_hrjm",
   "regular_diet",
-  "previous_veterinarian"
+  "previous_veterinarian",
+  "section_break_splg",
+  "agree_to_terms_and_conditions",
+  "section_break_ubon",
+  "data_entry_signature",
+  "column_break_vrdz",
+  "client_signature",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "clients_name",
-   "fieldtype": "Link",
-   "label": "CLIENTS NAME",
-   "options": "Customer"
+   "fieldtype": "Data",
+   "label": "CLIENTS NAME"
   },
   {
    "fieldname": "column_break_xdna",
@@ -62,11 +70,11 @@
   },
   {
    "fieldname": "patients_name",
-   "fieldtype": "Link",
-   "label": "PATIENTS NAME",
-   "options": "Patient"
+   "fieldtype": "Data",
+   "label": "PATIENTS NAME"
   },
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
@@ -77,8 +85,9 @@
   },
   {
    "fieldname": "species",
-   "fieldtype": "Data",
-   "label": "SPECIES"
+   "fieldtype": "Link",
+   "label": "SPECIES",
+   "options": "Species"
   },
   {
    "fieldname": "sex",
@@ -148,15 +157,70 @@
    "fieldname": "previous_veterinarian",
    "fieldtype": "Small Text",
    "label": "PREVIOUS VETERINARIAN"
+  },
+  {
+   "fieldname": "section_break_splg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "agree_to_terms_and_conditions",
+   "fieldtype": "Check",
+   "label": "Agree to Terms and Conditions"
+  },
+  {
+   "fieldname": "section_break_ubon",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "data_entry_signature",
+   "fieldtype": "Signature",
+   "label": "Data Entry Signature"
+  },
+  {
+   "fieldname": "column_break_vrdz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "client_signature",
+   "fieldtype": "Signature",
+   "label": "Client Signature"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "label": "Patient",
+   "options": "Patient",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "REGISTRATION FORM",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-09-07 11:18:20.068800",
+ "modified": "2025-09-24 12:02:29.267019",
  "modified_by": "Administrator",
  "module": "Vet Care",
- "name": "MY PETS - REGISTRATION FORM",
+ "name": "REGISTRATION FORM",
  "owner": "Administrator",
  "permissions": [
   {
