@@ -18,7 +18,9 @@
   "no_appointment_type",
   "no_patient",
   "section_break_naxj",
-  "admission_form_text"
+  "admission_form_text",
+  "column_break_k7re",
+  "surgery_form"
  ],
  "fields": [
   {
@@ -99,11 +101,20 @@
    "fieldname": "admission_form_text",
    "fieldtype": "HTML Editor",
    "label": "Admission Form Text"
+  },
+  {
+   "fieldname": "column_break_k7re",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "surgery_form",
+   "fieldtype": "HTML Editor",
+   "label": "Surgery Form"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-09-24 14:35:55.181755",
+ "modified": "2025-09-24 16:20:37.706598",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Vetcare Settings",
