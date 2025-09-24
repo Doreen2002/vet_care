@@ -1,0 +1,88 @@
+{
+    "charts": [],
+    "content": "[{\"id\":\"uzDnspV3qw\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Vet Care</span>\",\"col\":12}},{\"id\":\"KVquqR3DEl\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"ZkAHp5N2nR\",\"type\":\"card\",\"data\":{\"card_name\":\"Forms\",\"col\":4}}]",
+    "creation": "2025-09-24 15:03:17.340123",
+    "custom_blocks": [],
+    "docstatus": 0,
+    "doctype": "Workspace",
+    "for_user": "",
+    "hide_custom": 0,
+    "icon": "organization",
+    "idx": 0,
+    "indicator_color": "",
+    "is_hidden": 0,
+    "label": "Vet Care",
+    "links": [
+     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Vetcare Settings",
+      "link_count": 0,
+      "link_to": "Vetcare Settings",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+     },
+     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Settings",
+      "link_count": 1,
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Card Break"
+     },
+     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Vetcare Settings",
+      "link_count": 0,
+      "link_to": "Vetcare Settings",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+     },
+     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Forms",
+      "link_count": 2,
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Card Break"
+     },
+     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Animal Overview",
+      "link_count": 0,
+      "link_to": "Animal Overview",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+     },
+     {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Patient Booking",
+      "link_count": 0,
+      "link_to": "Patient Booking",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+     }
+    ],
+    "modified": "2025-09-24 15:38:53.898823",
+    "modified_by": "Administrator",
+    "module": "Vet Care",
+    "name": "Vet Care",
+    "number_cards": [],
+    "owner": "Administrator",
+    "parent_page": "",
+    "public": 1,
+    "quick_lists": [],
+    "roles": [],
+    "sequence_id": 10.0,
+    "shortcuts": [],
+    "title": "Vet Care"
+   }

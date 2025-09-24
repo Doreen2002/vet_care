@@ -29,28 +29,35 @@
  "fields": [
   {
    "fieldname": "client",
-   "fieldtype": "Data",
-   "label": "Client"
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client",
+   "options": "Customer",
+   "reqd": 1
   },
   {
    "fieldname": "address",
    "fieldtype": "Small Text",
-   "label": "Address"
+   "label": "Address",
+   "read_only": 1
   },
   {
    "fieldname": "mobile",
-   "fieldtype": "Phone",
-   "label": "Mobile"
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "read_only": 1
   },
   {
    "fieldname": "cpr",
    "fieldtype": "Data",
-   "label": "CPR"
+   "label": "CPR",
+   "read_only": 1
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "label": "Email",
+   "read_only": 1
   },
   {
    "fieldname": "invoice_no",
@@ -63,6 +70,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
@@ -71,28 +79,32 @@
    "fieldname": "patient",
    "fieldtype": "Table MultiSelect",
    "label": "Patient",
-   "options": "Patient MultiSelect"
+   "options": "Patient MultiSelect",
+   "reqd": 1
   },
   {
    "fieldname": "breed",
    "fieldtype": "Data",
-   "label": "Breed"
+   "label": "Breed",
+   "read_only": 1
   },
   {
    "fieldname": "body_weight",
    "fieldtype": "Data",
-   "label": "Body Weight"
+   "label": "Body Weight",
+   "read_only": 1
   },
   {
    "fieldname": "color",
-   "fieldtype": "Color",
-   "label": "Color"
+   "fieldtype": "Data",
+   "label": "Color",
+   "read_only": 1
   },
   {
    "fieldname": "gender",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "label": "Gender",
-   "options": "Male\nFemale"
+   "read_only": 1
   },
   {
    "fieldname": "section_break_nrtx",
@@ -100,8 +112,7 @@
   },
   {
    "fieldname": "terms_and_conditions",
-   "fieldtype": "HTML",
-   "options": "<div>\n<div>\n<div>I am responsible for the above-described animal (Patient) and have the ability to give you my permission to hospitalize either under anesthesia,\nreceive, prescribe for treatment or operate upon my pet if needed. </div>\n<div style=\"text-align:right;\">\n\u0623\u0646\u0627 \u0627\u0644\u0645\u0633\u0624\u0648\u0644 \u0639\u0646 \u0627\u0644\u062d\u064a\u0648\u0627\u0646 \u0627\u0644\u0645\u0648\u0635\u0648\u0641 \u0623\u0639\u0627\u0644\u0647 )\u0627\u0644\u0645\u0631\u064a\u0636( \u0627\u0623\u0644\u0644\u064a\u0641 \u0625\u0646\n\u064a\n\u064a \u0648\u0635\u0641 \u0627\u0644\u0639\u0627\u0644\u062c \u0623\u0648 \u0625\u062c\u0631\u0627\u0621 \u0639\u0645\u0644\u064a\u0629 \u062c\u0631\u0627\u062d\u064a\u0629 \u0644\u062d\u064a\u0648\u0627\u0646 \u0649\n\u0625\u0645\u0627 \u062a\u062d\u062a \u0627\u0644\u062a\u062e\u062f\u064a\u0631 \u0623\u0648 \u062a\u0644\u0641\n\u0644\u0644\u062f\u062e\u0648\u0644 \u0625\u0649\u0644 \u0627\u0644\u0645\u0633\u062a\u0634\u0641 \u0649\n\u064a\n\u0648\u0644\u062f\u064a \u0627\u0644\u0642\u062f\u0631\u0629 \u0639\u0649\u0644 \u0645\u0646\u062d\u0643 \u0625\u0630\u0646 \u0649\n\u0644\u0632\u0645 \u0627\u0623\u0644\u0645\u0631</div>\n </div>\n\n</div>"
+   "fieldtype": "HTML"
   },
   {
    "default": "0",
@@ -133,7 +144,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-20 13:52:27.638567",
+ "modified": "2025-09-24 15:21:58.575606",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Admission Form",
