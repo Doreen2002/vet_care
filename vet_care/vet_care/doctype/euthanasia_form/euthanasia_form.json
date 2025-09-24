@@ -28,6 +28,7 @@
   "invoice",
   "section_break_wsps",
   "html_dhij",
+  "veterinarian_name",
   "agree_to_terms_and_conditions",
   "section_break_uwwh",
   "owner_or_responsible_party",
@@ -191,13 +192,18 @@
    "fieldname": "veterinarian_signature",
    "fieldtype": "Signature",
    "label": "Veterinarian Signature"
+  },
+  {
+   "fieldname": "veterinarian_name",
+   "fieldtype": "Data",
+   "label": "Veterinarian Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-24 17:07:12.807475",
+ "modified": "2025-09-24 17:11:51.659385",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Euthanasia Form",

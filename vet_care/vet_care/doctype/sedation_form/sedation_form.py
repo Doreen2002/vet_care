@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class GROOMINGWITHSEDATIONFORM(Document):
+class SEDATIONFORM(Document):
 	pass
