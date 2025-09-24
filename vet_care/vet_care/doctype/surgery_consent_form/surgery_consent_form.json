@@ -28,7 +28,8 @@
   "section_break_qhrj",
   "owner_signature",
   "column_break_jmrd",
-  "veterinarian_signature"
+  "veterinarian_signature",
+  "amended_from"
  ],
  "fields": [
   {
@@ -161,12 +162,23 @@
    "fieldname": "veterinarian_name",
    "fieldtype": "Data",
    "label": "Veterinarian Name "
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Surgery Consent Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-09-24 16:36:52.272058",
+ "modified": "2025-09-24 16:40:50.254653",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Surgery Consent Form",
