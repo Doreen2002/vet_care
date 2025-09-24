@@ -20,7 +20,8 @@
   "section_break_naxj",
   "admission_form_text",
   "column_break_k7re",
-  "surgery_form"
+  "surgery_form",
+  "euthanasia_terms"
  ],
  "fields": [
   {
@@ -109,12 +110,17 @@
   {
    "fieldname": "surgery_form",
    "fieldtype": "HTML Editor",
-   "label": "Surgery Form"
+   "label": "Surgery Terms"
+  },
+  {
+   "fieldname": "euthanasia_terms",
+   "fieldtype": "HTML Editor",
+   "label": "Euthanasia Terms"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-09-24 16:20:37.706598",
+ "modified": "2025-09-24 16:49:45.462737",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Vetcare Settings",
