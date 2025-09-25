@@ -46,7 +46,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Forms",
-   "link_count": 6,
+   "link_count": 10,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -110,9 +110,49 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Discharge Form",
+   "link_count": 0,
+   "link_to": "Discharge Form",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SEDATION FORM",
+   "link_count": 0,
+   "link_to": "SEDATION FORM",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Grooming Form",
+   "link_count": 0,
+   "link_to": "Grooming Form",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Book Patient Appointment",
+   "link_count": 0,
+   "link_to": "book-patient-appoint",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-09-24 18:01:25.305751",
+ "modified": "2025-09-25 14:22:37.892742",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Vet Care",

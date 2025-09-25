@@ -1,0 +1,328 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-25 13:59:38.865676",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_gjoo",
+  "amended_from",
+  "customer_name",
+  "email",
+  "contact_no",
+  "cpr_no",
+  "column_break_kkah",
+  "date",
+  "price",
+  "section_break_heac",
+  "patient",
+  "species",
+  "age",
+  "column_break_onto",
+  "size",
+  "breed",
+  "invoices",
+  "section_break_bsco",
+  "full_grooming",
+  "summer_cur",
+  "partial_shave",
+  "column_break_payd",
+  "full_shaving",
+  "trimming",
+  "poodle_cut",
+  "column_break_hxrl",
+  "lion_cut",
+  "clipper_blade_size",
+  "puppy_cut",
+  "section_break_kzug",
+  "basic_grooming",
+  "medicated_shower",
+  "other_services",
+  "column_break_mrwr",
+  "sanitary_shaving",
+  "doctor_consultation",
+  "addtional_request",
+  "any_medical_conditions_or_allergies",
+  "section_break_btzi",
+  "html_editor_rvye",
+  "agree_to_terms_and_conditions",
+  "section_break_zhii",
+  "for_my_pet",
+  "column_break_evgm",
+  "customer_signature"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_gjoo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Grooming Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contact_no",
+   "fieldtype": "Data",
+   "label": "Contact No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cpr_no",
+   "fieldtype": "Data",
+   "label": "CPR No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_kkah",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price"
+  },
+  {
+   "fieldname": "section_break_heac",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "species",
+   "fieldtype": "Link",
+   "label": "Species",
+   "options": "Species"
+  },
+  {
+   "fieldname": "column_break_onto",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "size",
+   "fieldtype": "Select",
+   "label": "Size",
+   "options": "S\nM\nL"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Table MultiSelect",
+   "label": "Patient",
+   "options": "Patient MultiSelect"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age"
+  },
+  {
+   "fieldname": "breed",
+   "fieldtype": "Data",
+   "label": "Breed"
+  },
+  {
+   "fieldname": "section_break_bsco",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "full_grooming",
+   "fieldtype": "Check",
+   "label": "Full Grooming"
+  },
+  {
+   "default": "0",
+   "fieldname": "summer_cur",
+   "fieldtype": "Check",
+   "label": "Summer Cur"
+  },
+  {
+   "default": "0",
+   "fieldname": "partial_shave",
+   "fieldtype": "Check",
+   "label": "Partial Shave"
+  },
+  {
+   "fieldname": "column_break_payd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "full_shaving",
+   "fieldtype": "Check",
+   "label": "Full Shaving"
+  },
+  {
+   "default": "0",
+   "fieldname": "trimming",
+   "fieldtype": "Check",
+   "label": "Trimming"
+  },
+  {
+   "default": "0",
+   "fieldname": "poodle_cut",
+   "fieldtype": "Check",
+   "label": "Poodle Cut"
+  },
+  {
+   "fieldname": "column_break_hxrl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "lion_cut",
+   "fieldtype": "Check",
+   "label": "Lion Cut"
+  },
+  {
+   "default": "0",
+   "fieldname": "clipper_blade_size",
+   "fieldtype": "Check",
+   "label": "Clipper Blade Size"
+  },
+  {
+   "default": "0",
+   "fieldname": "puppy_cut",
+   "fieldtype": "Check",
+   "label": "Puppy Cut"
+  },
+  {
+   "fieldname": "section_break_kzug",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "basic_grooming",
+   "fieldtype": "Check",
+   "label": "Basic Grooming"
+  },
+  {
+   "default": "0",
+   "fieldname": "medicated_shower",
+   "fieldtype": "Check",
+   "label": "Medicated Shower"
+  },
+  {
+   "fieldname": "column_break_mrwr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "sanitary_shaving",
+   "fieldtype": "Check",
+   "label": "Sanitary Shaving"
+  },
+  {
+   "default": "0",
+   "fieldname": "doctor_consultation",
+   "fieldtype": "Check",
+   "label": "Doctor Consultation"
+  },
+  {
+   "fieldname": "other_services",
+   "fieldtype": "Small Text",
+   "label": "Other Services"
+  },
+  {
+   "default": "0",
+   "fieldname": "addtional_request",
+   "fieldtype": "Check",
+   "label": "Addtional Request"
+  },
+  {
+   "default": "0",
+   "fieldname": "any_medical_conditions_or_allergies",
+   "fieldtype": "Check",
+   "label": "Any Medical Conditions or Allergies"
+  },
+  {
+   "fieldname": "section_break_btzi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_editor_rvye",
+   "fieldtype": "HTML"
+  },
+  {
+   "default": "0",
+   "fieldname": "agree_to_terms_and_conditions",
+   "fieldtype": "Check",
+   "label": " Agree to Terms and Conditions"
+  },
+  {
+   "fieldname": "section_break_zhii",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "for_my_pet",
+   "fieldtype": "Signature",
+   "label": "For My Pet"
+  },
+  {
+   "fieldname": "column_break_evgm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "customer_signature",
+   "fieldtype": "Signature",
+   "label": "Customer Signature"
+  },
+  {
+   "fieldname": "invoices",
+   "fieldtype": "Table MultiSelect",
+   "label": "Invoices",
+   "options": "Sales Invoice MultiSelect"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-25 15:39:35.225719",
+ "modified_by": "Administrator",
+ "module": "Vet Care",
+ "name": "Grooming Form",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
