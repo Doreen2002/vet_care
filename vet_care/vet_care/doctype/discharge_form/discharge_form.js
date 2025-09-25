@@ -3,17 +3,17 @@
 
 frappe.ui.form.on("Discharge Form", {
 	refresh(frm) {
-        frm.set_query('patient', () => {
+        frm.set_query('pet_name', () => {
             return {
                 filters: {
-                    customer: frm.doc.customer_name
+                    customer: frm.doc.pet_owner
                 }
             }
         })
         frappe.db.get_doc('Vetcare Settings').then(doc => {
             if(doc)
             {
-                cur_frm.set_df_property("html_editor_rvye","options", doc.dgrooming_terms);
+                cur_frm.set_df_property("html_jbbp","options", doc.discharge_terms);
                 
                 cur_frm.refresh_fields();
             }
@@ -21,7 +21,7 @@ frappe.ui.form.on("Discharge Form", {
         frm.set_query('invoices', () => {
             return {
                 filters: {
-                    customer: frm.doc.customer_name
+                    customer: frm.doc.pet_owner
                 }
             }
         })
@@ -30,18 +30,18 @@ frappe.ui.form.on("Discharge Form", {
         
 	},
   
-    customer_name(frm)
+    pet_owner(frm)
     {
-        if(frm.doc.customer_name)
+        if(frm.doc.pet_owner)
         {
             frappe.call({
                 method:"vet_care.vet_care.doctype.euthanasia_form.euthanasia_form.get_customer_details",
-                args:{'customer':frm.doc.customer_name},
+                args:{'customer':frm.doc.pet_owner},
                 callback: function(r) {
                     if(r.message)
                     {
                        
-                        frm.set_value("contact_no", r.message.mobile_no); 
+                        frm.set_value("owner_phone_no", r.message.mobile_no); 
                         
                        
                           
