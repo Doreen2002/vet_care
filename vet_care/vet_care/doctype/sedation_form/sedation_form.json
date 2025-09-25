@@ -7,7 +7,7 @@
  "field_order": [
   "section_break_fjkp",
   "client",
-  "adress",
+  "address",
   "amended_from",
   "column_break_msfp",
   "cpr",
@@ -22,15 +22,18 @@
   "column_break_vhaq",
   "breed",
   "color",
-  "vet_name",
   "section_break_fhvu",
+  "vet_name",
   "invoices",
+  "section_break_tvry",
+  "comments_written_by_the_veterinarian_that_i_approve",
   "section_break_uxvh",
   "html_eyfd",
   "agree_to_terms_and_conditions",
   "section_break_drny",
-  "comments_written_by_the_veterinarian_that_i_approve",
-  "owner_or_the_responsible_party"
+  "owner_or_the_responsible_party",
+  "column_break_iruf",
+  "veterinarian_signature"
  ],
  "fields": [
   {
@@ -42,15 +45,18 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "GROOMING WITH SEDATION FORM",
+   "options": "SEDATION FORM",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
    "fieldname": "client",
-   "fieldtype": "Data",
-   "label": "CLIENT"
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "CLIENT",
+   "options": "Customer",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_msfp",
@@ -60,13 +66,15 @@
    "fieldname": "patient",
    "fieldtype": "Table MultiSelect",
    "label": "PATIENT",
-   "options": "Patient MultiSelect"
+   "options": "Patient MultiSelect",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_aiwk",
    "fieldtype": "Column Break"
   },
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "DATE"
@@ -76,24 +84,22 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "adress",
-   "fieldtype": "Data",
-   "label": "ADRESS"
-  },
-  {
    "fieldname": "mobile",
    "fieldtype": "Data",
-   "label": "MOBILE"
+   "label": "MOBILE",
+   "read_only": 1
   },
   {
    "fieldname": "cpr",
    "fieldtype": "Data",
-   "label": "CPR"
+   "label": "CPR",
+   "read_only": 1
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "EMAIL"
+   "label": "EMAIL",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_vhaq",
@@ -102,23 +108,25 @@
   {
    "fieldname": "breed",
    "fieldtype": "Data",
-   "label": "BREED"
+   "label": "BREED",
+   "read_only": 1
   },
   {
    "fieldname": "body_weight",
-   "fieldtype": "Float",
-   "label": "BODY WEIGHT"
+   "fieldtype": "Data",
+   "label": "BODY WEIGHT",
+   "read_only": 1
   },
   {
    "fieldname": "color",
-   "fieldtype": "Color",
-   "label": "COLOR"
+   "fieldtype": "Data",
+   "label": "COLOR",
+   "read_only": 1
   },
   {
    "fieldname": "gender",
-   "fieldtype": "Select",
-   "label": "GENDER",
-   "options": "Female\nMale"
+   "fieldtype": "Data",
+   "label": "GENDER"
   },
   {
    "fieldname": "section_break_drny",
@@ -147,8 +155,7 @@
   },
   {
    "fieldname": "html_eyfd",
-   "fieldtype": "HTML",
-   "options": "<div>\nI am responsible for the above described animal and have the ability to give you my\npermission to groom under anesthesia\nI acknowledge that there are certain risks to anesthesia and treatment that could involve\nserious bodily injury or death to my pet and that these risks are present in any procedure that\nrequires a general or intravenous anesthetics and treatment. I agree to the use of anesthesia as\nconsidered necessary and advisable by the Veterinarian.\nI am aware that upon grooming skin problem may be observed by the groomer and if such\narises I have to be informed and I shall bring my pet to the veterinarian in the establishment and\nshall not make issues that the establishment was responsible for such action.\nI am aware that this is a veterinary center that my pet is not alone in the grooming room\nor other rooms and other patient exist in the same room. The establishment has made all\nprecautionary measures for preventing contamination / infestation of diseases according to their\ncapabilities.\nComments written by the veterinarian that I approve:\n__________________________________________________________________________________\n__________________________________________________________________________________\n__________________________________________________________________________________\n__________________________________________________________________________________\nI as an owner shall accept the consequence of what happens. Libel nor slander is\nnot tolerated in this establishment specifically without proper investigation nor advised from the\nestablishment itself.\nAfter carefully reading the above I shall sign in agreement</div>"
+   "fieldtype": "HTML"
   },
   {
    "default": "0",
@@ -164,13 +171,33 @@
   {
    "fieldname": "section_break_fhvu",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_tvry",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_iruf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "veterinarian_signature",
+   "fieldtype": "Signature",
+   "label": "Veterinarian Signature"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "ADDRESS",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-24 17:10:59.441857",
+ "modified": "2025-09-25 10:25:13.359413",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "SEDATION FORM",

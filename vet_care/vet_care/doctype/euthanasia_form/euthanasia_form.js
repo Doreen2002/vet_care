@@ -34,7 +34,7 @@ frappe.ui.form.on("Euthanasia Form", {
         if(frm.doc.patients_name)
         {
             frappe.call({
-                method:"vet_care.vet_care.doctype.surgery_consent_form.surgery_consent_form.get_patient_details",
+                method:"vet_care.vet_care.doctype.euthanasia_form.euthanasia_form.get_patient_details",
                 args:{'patient':frm.doc.patients_name},
                 callback: function(r) {
                     if(r.message)
@@ -59,7 +59,7 @@ frappe.ui.form.on("Euthanasia Form", {
         if(frm.doc.clients_name)
         {
             frappe.call({
-                method:"vet_care.vet_care.doctype.surgery_consent_form.surgery_consent_form.get_customer_details",
+                method:"vet_care.vet_care.doctype.euthanasia_form.euthanasia_form.get_customer_details",
                 args:{'customer':frm.doc.clients_name},
                 callback: function(r) {
                     if(r.message)
