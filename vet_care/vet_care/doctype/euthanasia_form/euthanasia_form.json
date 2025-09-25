@@ -24,12 +24,16 @@
   "breed",
   "spayedneutered",
   "body_wt",
+  "section_break_hycg",
   "invoice",
   "section_break_wsps",
   "html_dhij",
+  "veterinarian_name",
   "agree_to_terms_and_conditions",
   "section_break_uwwh",
-  "owner_or_responsible_party"
+  "owner_or_responsible_party",
+  "column_break_plpm",
+  "veterinarian_signature"
  ],
  "fields": [
   {
@@ -49,18 +53,22 @@
   {
    "fieldname": "clients_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "CLIENTS NAME",
-   "options": "Customer"
+   "options": "Customer",
+   "reqd": 1
   },
   {
    "fieldname": "mobile_no",
    "fieldtype": "Data",
-   "label": "MOBILE NO"
+   "label": "MOBILE NO",
+   "read_only": 1
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "EMAIL"
+   "label": "EMAIL",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_yhcc",
@@ -69,12 +77,14 @@
   {
    "fieldname": "cpr_no",
    "fieldtype": "Data",
-   "label": "CPR No"
+   "label": "CPR No",
+   "read_only": 1
   },
   {
    "fieldname": "address",
    "fieldtype": "Small Text",
-   "label": "ADDRESS"
+   "label": "ADDRESS",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_zgft",
@@ -84,28 +94,32 @@
    "fieldname": "patients_name",
    "fieldtype": "Table MultiSelect",
    "label": "PATIENTS NAME",
-   "options": "Patient MultiSelect"
+   "options": "Patient MultiSelect",
+   "reqd": 1
   },
   {
    "fieldname": "species",
    "fieldtype": "Data",
-   "label": "SPECIES"
+   "label": "SPECIES",
+   "read_only": 1
   },
   {
    "fieldname": "sex",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "label": "SEX",
-   "options": "Female\nMale"
+   "read_only": 1
   },
   {
    "fieldname": "color",
-   "fieldtype": "Color",
-   "label": "COLOR"
+   "fieldtype": "Data",
+   "label": "COLOR",
+   "read_only": 1
   },
   {
    "fieldname": "microchip_number",
    "fieldtype": "Data",
-   "label": "MICROCHIP NUMBER"
+   "label": "MICROCHIP NUMBER",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_yzks",
@@ -114,23 +128,26 @@
   {
    "fieldname": "dob_age",
    "fieldtype": "Data",
-   "label": "DOB/AGE"
+   "label": "DOB/AGE",
+   "read_only": 1
   },
   {
    "fieldname": "breed",
    "fieldtype": "Data",
-   "label": "BREED"
+   "label": "BREED",
+   "read_only": 1
   },
   {
    "fieldname": "spayedneutered",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "label": "SPAYED/NEUTERED",
-   "options": "Y\nN"
+   "read_only": 1
   },
   {
    "fieldname": "body_wt",
-   "fieldtype": "Float",
-   "label": "BODY Wt"
+   "fieldtype": "Data",
+   "label": "BODY Wt",
+   "read_only": 1
   },
   {
    "fieldname": "invoice",
@@ -162,13 +179,32 @@
    "fieldname": "owner_or_responsible_party",
    "fieldtype": "Signature",
    "label": "Owner or Responsible Party"
+  },
+  {
+   "fieldname": "section_break_hycg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_plpm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "veterinarian_signature",
+   "fieldtype": "Signature",
+   "label": "Veterinarian Signature"
+  },
+  {
+   "fieldname": "veterinarian_name",
+   "fieldtype": "Data",
+   "label": "Veterinarian Name"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-20 14:03:57.548815",
+ "modified": "2025-09-25 08:53:22.961142",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Euthanasia Form",

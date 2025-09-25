@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestMYPETSREGISTRATIONFORM(FrappeTestCase):
+class TestREGISTRATIONFORM(FrappeTestCase):
 	pass

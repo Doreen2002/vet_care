@@ -7,13 +7,15 @@
  "field_order": [
   "date",
   "column_break_nksc",
-  "pet_name",
-  "column_break_faes",
   "pet_owner",
+  "owner_phone_no",
+  "column_break_faes",
+  "pet_name",
   "section_break_shap",
   "follow_up_visit_date",
+  "column_break_kyrn",
+  "invoices",
   "column_break_tchd",
-  "owner_phone_no",
   "section_break_wxmv",
   "diagnosis",
   "outpatient_medicines_with_instructions_section",
@@ -37,10 +39,19 @@
   "others",
   "data_wqug",
   "special_instructions_if_any_section",
-  "small_text_mplj"
+  "small_text_mplj",
+  "section_break_yxip",
+  "vet_name",
+  "html_jbbp",
+  "agree_to_terms_and_conditions",
+  "section_break_zssu",
+  "owner_signature",
+  "column_break_ugha",
+  "veterinarian_signature"
  ],
  "fields": [
   {
+   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
@@ -51,8 +62,9 @@
   },
   {
    "fieldname": "pet_name",
-   "fieldtype": "Data",
-   "label": "Pet Name"
+   "fieldtype": "Table MultiSelect",
+   "label": "Pet Name",
+   "options": "Patient MultiSelect"
   },
   {
    "fieldname": "column_break_faes",
@@ -60,8 +72,9 @@
   },
   {
    "fieldname": "pet_owner",
-   "fieldtype": "Data",
-   "label": "Pet Owner"
+   "fieldtype": "Link",
+   "label": "Pet Owner",
+   "options": "Customer"
   },
   {
    "fieldname": "section_break_shap",
@@ -78,8 +91,9 @@
   },
   {
    "fieldname": "owner_phone_no",
-   "fieldtype": "Phone",
-   "label": "Owner Phone no"
+   "fieldtype": "Data",
+   "label": "Owner Phone no",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_wxmv",
@@ -199,12 +213,61 @@
   {
    "fieldname": "small_text_mplj",
    "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "section_break_yxip",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vet_name",
+   "fieldtype": "Data",
+   "label": "Vet Name"
+  },
+  {
+   "fieldname": "html_jbbp",
+   "fieldtype": "HTML"
+  },
+  {
+   "default": "0",
+   "fieldname": "agree_to_terms_and_conditions",
+   "fieldtype": "Check",
+   "label": "Agree to Terms and Conditions"
+  },
+  {
+   "fieldname": "section_break_zssu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "owner_signature",
+   "fieldtype": "Signature",
+   "label": "Owner/Pet Reciever Signature"
+  },
+  {
+   "fieldname": "column_break_ugha",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "veterinarian_signature",
+   "fieldtype": "Signature",
+   "label": "Veterinarian Signature"
+  },
+  {
+   "fieldname": "invoices",
+   "fieldtype": "Table MultiSelect",
+   "label": "Invoices",
+   "options": "Sales Invoice MultiSelect"
+  },
+  {
+   "fieldname": "column_break_kyrn",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-02 18:23:51.554201",
+ "modified": "2025-09-25 13:49:30.093762",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Discharge Form",

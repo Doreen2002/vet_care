@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestGROOMINGWITHSEDATIONFORM(FrappeTestCase):
+class TestGroomingForm(FrappeTestCase):
 	pass

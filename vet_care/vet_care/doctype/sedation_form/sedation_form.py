@@ -5,7 +5,7 @@ import frappe
 from frappe.model.document import Document
 
 
-class SurgeryConsentForm(Document):
+class SEDATIONFORM(Document):
 	pass
 
 
@@ -21,7 +21,7 @@ def get_patient_details(patient):
 	for p in patient:
 		patient_doc = frappe.get_doc("Patient", p['patient'])
 		breed_parts.append(patient_doc.vc_breed if patient_doc.vc_breed else '')
-		body_wgt_parts.append(str(patient_doc.vc_weight) if patient_doc.vc_weight else '')
+		body_wgt_parts.append(str(patient_doc.vc_weight) if patient_doc.vc_weight				 else '')
 		gender_parts.append(patient_doc.sex if patient_doc.sex else '')
 		color_parts.append(patient_doc.vc_color if patient_doc.vc_color else '')
 		vc_neutered_parts.append(patient_doc.vc_neutered if patient_doc.vc_neutered else '')

@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class MYPETSREGISTRATIONFORM(Document):
+class GroomingForm(Document):
 	pass
