@@ -61,7 +61,7 @@ frappe.ui.form.on("Surgery Consent Form", {
                     if(r.message)
                     {
                        
-                        frm.set_value("mobile_no", r.message.body_wgt); 
+                        frm.set_value("mobile_no", r.message.mobile_no); 
                         frm.set_value("cpr", r.message.cpr);
                        
                           

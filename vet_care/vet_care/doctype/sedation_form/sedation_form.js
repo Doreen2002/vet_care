@@ -65,7 +65,7 @@ frappe.ui.form.on("SEDATION FORM", {
                     if(r.message)
                     {
                        
-                        frm.set_value("mobile", r.message.body_wgt); 
+                        frm.set_value("mobile", r.message.mobile_no); 
                         frm.set_value("cpr", r.message.cpr);
                         frm.set_value("email", r.message.email); 
                         frm.set_value("address", r.message.address);
