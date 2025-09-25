@@ -41,7 +41,7 @@ frappe.ui.form.on("Discharge Form", {
                     if(r.message)
                     {
                        
-                        frm.set_value("owner_phone_no", r.message.mobile_no); 
+                        frm.set_value("contact_no", r.message.mobile_no); 
                         
                        
                           
