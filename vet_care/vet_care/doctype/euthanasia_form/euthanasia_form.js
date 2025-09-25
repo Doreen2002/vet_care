@@ -67,6 +67,8 @@ frappe.ui.form.on("Euthanasia Form", {
                        
                         frm.set_value("mobile_no", r.message.body_wgt); 
                         frm.set_value("cpr_no", r.message.cpr);
+                        frm.set_value("email", r.message.email); 
+                        frm.set_value("address", r.message.address);
                        
                           
                         frm.refresh_fields();

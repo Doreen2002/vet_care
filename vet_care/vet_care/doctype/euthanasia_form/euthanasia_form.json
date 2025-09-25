@@ -106,7 +106,8 @@
   {
    "fieldname": "sex",
    "fieldtype": "Data",
-   "label": "SEX"
+   "label": "SEX",
+   "read_only": 1
   },
   {
    "fieldname": "color",
@@ -203,7 +204,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-24 17:11:51.659385",
+ "modified": "2025-09-25 08:53:22.961142",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Euthanasia Form",
