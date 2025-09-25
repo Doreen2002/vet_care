@@ -20,6 +20,7 @@
   "section_break_naxj",
   "admission_form_text",
   "sedation_terms",
+  "discharge_terms",
   "column_break_k7re",
   "surgery_form",
   "euthanasia_terms"
@@ -122,11 +123,16 @@
    "fieldname": "sedation_terms",
    "fieldtype": "HTML Editor",
    "label": "SEDATION Terms"
+  },
+  {
+   "fieldname": "discharge_terms",
+   "fieldtype": "HTML Editor",
+   "label": "Discharge Terms"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-09-25 10:04:11.476674",
+ "modified": "2025-09-25 10:58:50.522134",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Vetcare Settings",
