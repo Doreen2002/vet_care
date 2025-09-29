@@ -6,7 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_vnnf",
-  "amended_from",
+  "date",
   "clients_name",
   "mobile_no",
   "email",
@@ -27,28 +27,18 @@
   "section_break_hycg",
   "invoice",
   "section_break_wsps",
-  "html_dhij",
   "veterinarian_name",
   "agree_to_terms_and_conditions",
   "section_break_uwwh",
   "owner_or_responsible_party",
   "column_break_plpm",
-  "veterinarian_signature"
+  "veterinarian_signature",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "section_break_vnnf",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Euthanasia Form",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   },
   {
    "fieldname": "clients_name",
@@ -160,11 +150,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "html_dhij",
-   "fieldtype": "HTML",
-   "options": "<div>\n</div>"
-  },
-  {
    "default": "0",
    "fieldname": "agree_to_terms_and_conditions",
    "fieldtype": "Check",
@@ -198,13 +183,32 @@
    "fieldname": "veterinarian_name",
    "fieldtype": "Data",
    "label": "Veterinarian Name"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "no_copy": 1,
+   "options": "Euthanasia Form",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Euthanasia Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-25 08:53:22.961142",
+ "modified": "2025-09-29 16:47:43.186160",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Euthanasia Form",

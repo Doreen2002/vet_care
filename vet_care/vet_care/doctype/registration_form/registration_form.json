@@ -13,9 +13,10 @@
   "mobile_no",
   "column_break_sevy",
   "address",
+  "email",
   "section_break_iosq",
   "patients_name",
-  "patient",
+  "dobage",
   "species",
   "sex",
   "microchip_number",
@@ -34,7 +35,7 @@
   "section_break_splg",
   "agree_to_terms_and_conditions",
   "section_break_ubon",
-  "data_entry_signature",
+  "column_break_ijhk",
   "column_break_vrdz",
   "client_signature",
   "amended_from"
@@ -173,12 +174,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
-   "fieldname": "data_entry_signature",
-   "fieldtype": "Signature",
-   "label": "Data Entry Signature"
-  },
-  {
    "fieldname": "column_break_vrdz",
    "fieldtype": "Column Break"
   },
@@ -196,13 +191,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "patient",
-   "fieldtype": "Link",
-   "label": "Patient",
-   "options": "Patient",
-   "read_only": 1
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -211,13 +199,27 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "dobage",
+   "fieldtype": "Data",
+   "label": "DOB/Age"
+  },
+  {
+   "fieldname": "column_break_ijhk",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-24 12:02:29.267019",
+ "modified": "2025-09-28 16:02:08.736567",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "REGISTRATION FORM",
