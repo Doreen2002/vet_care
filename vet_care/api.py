@@ -277,6 +277,7 @@ def make_patient_activity(patient, activity_items, sales_person=None):
         {
             "doctype": "Patient Activity",
             "patient": patient,
+            
             "sales_person": sales_person,
             "posting_date": today(),
         }
@@ -339,9 +340,9 @@ def save_to_patient(patient, data):
 @frappe.whitelist()
 def make_patient(patient_data, owner):
     patient_data = json.loads(patient_data)
-
     patient_doc = frappe.new_doc("Patient")
     patient_doc.customer = owner
+    patient_doc.first_name = patient_data['patient_name'].strip().split()[0]
     patient_doc.update(patient_data)
     patient_doc.save()
 
