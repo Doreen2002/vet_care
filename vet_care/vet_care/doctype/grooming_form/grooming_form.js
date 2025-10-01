@@ -51,5 +51,27 @@ frappe.ui.form.on("Grooming Form", {
             }     });
         }
        
-    }
+    },
+    patient(frm)
+    {
+        if(frm.doc.patient)
+        {
+            frappe.call({
+                method:"vet_care.vet_care.doctype.euthanasia_form.euthanasia_form.get_patient_details",
+                args:{'patient':frm.doc.patient},
+                callback: function(r) {
+                    if(r.message)
+                    {
+                       
+                        frm.set_value("breed", r.message.breed);
+                        frm.set_value("species", r.message.species);
+                        frm.set_value("age", r.message.dob_age);
+                      
+                        frm.refresh_fields();
+
+                    }
+            }     });
+        }
+       
+    },
 });

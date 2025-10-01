@@ -113,7 +113,8 @@
    "fieldname": "species",
    "fieldtype": "Link",
    "label": "Species",
-   "options": "Species"
+   "options": "Species",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_onto",
@@ -134,12 +135,14 @@
   {
    "fieldname": "age",
    "fieldtype": "Data",
-   "label": "Age"
+   "label": "Age",
+   "read_only": 1
   },
   {
    "fieldname": "breed",
    "fieldtype": "Data",
-   "label": "Breed"
+   "label": "Breed",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_bsco",
@@ -301,7 +304,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-25 15:39:35.225719",
+ "modified": "2025-10-01 11:52:11.198598",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Grooming Form",
