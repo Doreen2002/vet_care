@@ -59,6 +59,8 @@ function _print_clinical_history(data, print_settings) {
     print_css,
     print_settings,
     landscape,
+    lang: frappe.boot.lang || "en",
+    layout_direction: frappe.boot.layout_direction || "ltr",
   });
   frappe.render_pdf(html, print_settings);
 }
