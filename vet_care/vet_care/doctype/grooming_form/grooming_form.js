@@ -42,7 +42,8 @@ frappe.ui.form.on("Grooming Form", {
                     {
                        
                         frm.set_value("contact_no", r.message.mobile_no); 
-                        
+                        frm.set_value("cpr_no", r.message.cpr_no);
+                        frm.set_value("email", r.message.email);
                        
                           
                         frm.refresh_fields();
