@@ -74,9 +74,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "REGISTRATION FORM",
+   "label": "Registration Form",
    "link_count": 0,
-   "link_to": "REGISTRATION FORM",
+   "link_to": "Registration Form",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -124,9 +124,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "SEDATION FORM",
+   "label": "Sedation Form",
    "link_count": 0,
-   "link_to": "SEDATION FORM",
+   "link_to": "Sedation Form",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -152,7 +152,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-09-25 14:22:37.892742",
+ "modified": "2025-09-30 10:55:02.012184",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Vet Care",
