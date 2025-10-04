@@ -98,7 +98,7 @@
   },
   {
    "fieldname": "color",
-   "fieldtype": "Color",
+   "fieldtype": "Data",
    "label": "COLOR"
   },
   {
@@ -219,10 +219,10 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-28 16:02:08.736567",
+ "modified": "2025-10-04 13:04:39.864928",
  "modified_by": "Administrator",
  "module": "Vet Care",
- "name": "Registration Form",
+ "name": "REGISTRATION FORM",
  "owner": "Administrator",
  "permissions": [
   {
@@ -235,6 +235,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
