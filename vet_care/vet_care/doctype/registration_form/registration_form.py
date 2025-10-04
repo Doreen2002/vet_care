@@ -5,7 +5,7 @@ import frappe
 from frappe.model.document import Document
 
 
-class REGISTRATIONFORM(Document):
+class RegistrationForm(Document):
 	def on_submit(self):
 		if self.agree_to_terms_and_conditions != 1:
 			return frappe.throw("You must agree to the terms and conditions before submitting the form.")
