@@ -39,13 +39,15 @@ frappe.ui.form.on("Euthanasia Form", {
                 callback: function(r) {
                     if(r.message)
                     {
-                        frm.set_value("microchip_number", r.message.microchip_no);
+                       
                         frm.set_value("body_wt", r.message.body_wgt); 
                         frm.set_value("sex", r.message.gender);
                         frm.set_value("color", r.message.color);
                         frm.set_value("breed", r.message.breed);
-                        frm.set_value("species", r.message.species);
-                        frm.set_value("dob_age", r.message.dob_age);
+                         frm.set_value('species', r.message.species)
+                        frm.set_value('microchip_number', r.message.microchip_number)
+                        frm.set_value('dob_age', r.message.dob_age)
+                          
                         frm.set_value("spayedneutered", r.message.spayedneutered);  
                         frm.refresh_fields();
 
@@ -64,13 +66,12 @@ frappe.ui.form.on("Euthanasia Form", {
                 callback: function(r) {
                     if(r.message)
                     {
-                       
+                      
                         frm.set_value("mobile_no", r.message.mobile_no); 
-                        frm.set_value("cpr_no", r.message.cpr);
+                        frm.set_value("cpr_no", r.message.cpr_no);
                         frm.set_value("email", r.message.email); 
                         frm.set_value("address", r.message.address);
                        
-                          
                         frm.refresh_fields();
 
                     }

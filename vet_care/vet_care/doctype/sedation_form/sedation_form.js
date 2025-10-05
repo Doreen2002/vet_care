@@ -18,16 +18,13 @@ frappe.ui.form.on("Sedation Form", {
                 cur_frm.refresh_fields();
             }
         });
-        frm.set_query('invoice', () => {
+        frm.set_query('invoices', () => {
             return {
                 filters: {
                     customer: frm.doc.client
                 }
             }
-        })
-        
-
-        
+        })     
 	},
     patient(frm)
     {
@@ -66,7 +63,7 @@ frappe.ui.form.on("Sedation Form", {
                     {
                        
                         frm.set_value("mobile", r.message.mobile_no); 
-                        frm.set_value("cpr", r.message.cpr);
+                        frm.set_value("cpr", r.message.cpr_no);
                         frm.set_value("email", r.message.email); 
                         frm.set_value("address", r.message.address);
                        
