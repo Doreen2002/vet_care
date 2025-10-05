@@ -15,11 +15,25 @@ class RegistrationForm(Document):
 			"customer_type": "Individual",
 			"customer_group": "All Customer Groups",
 			"mobile_no": self.mobile_no,
+			"mobile_number": self.mobile_no,
+			"email_info": self.email,
+			"email_id": self.email,
 			"vc_cpr": self.cpr_no,
 			"vc_flat_no":self.address
 		})
 		customer.insert(ignore_permissions=True)
-	
+		lines = []
+		if self.name_and_date_of_last_vaccine:
+			lines.append(f"Name and Date of Last Vaccine: {self.name_and_date_of_last_vaccine}")
+
+		if self.name_and_date_of_last_deworming:
+			lines.append(f"Name and Date of Last Deworming: {self.name_and_date_of_last_deworming}")
+
+		if self.previous_veterinarian:
+			lines.append(f"Previous Veterinarian: {self.previous_veterinarian}")
+
+		medical_history = "\n".join(lines)
+
 		patient = frappe.get_doc( {
 			"doctype": "Patient",
 			"first_name": self.patients_name,
@@ -29,9 +43,13 @@ class RegistrationForm(Document):
 			"vc_species": self.species,
 			"sex":self.sex,
 			"vc_chip_id":self.microchip_number,
-			# "spayedneutered":self.spayedneutered,
+			"vc_neutered":self.spayedneutered,
 			"vc_weight":self.body_wt,
+			"dob":self.dobage,
 			"vc_color":self.color,
+			"allergies":self.any_allergies,
+			"vc_nutrition": self.regular_diet,
+			"medical_history": medical_history
 		})
 		patient.insert(ignore_permissions=True)
 		self.customer = customer.name
