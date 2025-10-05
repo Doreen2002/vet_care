@@ -40,8 +40,8 @@ def get_customer_details(customer):
 	cpr_no = ''
 	email =''
 	customer_doc = frappe.get_doc ('Customer', customer)
-	address = customer_doc.vc_flat_no if  customer_doc.vc_flat_no else ''  + customer_doc.vc_road_no if customer_doc.vc_road_no else '' + customer_doc.vc_road_no if  customer_doc.vc_road_no else '' + customer_doc.vc_city if customer_doc.vc_city else ''
+	address = customer_doc.vc_flat_no if  customer_doc.vc_flat_no else ''  + customer_doc.vc_road_no if customer_doc.vc_road_no else '' + customer_doc.vc_block_no if  customer_doc.vc_block_no else '' + customer_doc.vc_city if customer_doc.vc_city else ''
 	mobile_no = customer_doc.mobile_number if customer_doc.mobile_number else ''
 	cpr_no = customer_doc.vc_cpr if customer_doc.vc_cpr else ''
-	email = customer_doc.email_id if customer_doc.email_id else ''
+	email = customer_doc.email_id or customer_doc.email_info or ''
 	return {"address":address, "mobile_no":mobile_no, "cpr_no":cpr_no, "email":email}

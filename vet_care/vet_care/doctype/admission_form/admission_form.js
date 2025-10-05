@@ -61,7 +61,7 @@ frappe.ui.form.on("Admission Form", {
                     {
                         frm.set_value("address", r.message.address);
                         frm.set_value("mobile", r.message.mobile_no); 
-                        frm.set_value("cpr", r.message.cpr);
+                        frm.set_value("cpr", r.message.cpr_no);
                         frm.set_value("email", r.message.email);
                           
                         frm.refresh_fields();
