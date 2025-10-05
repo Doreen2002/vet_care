@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "AD-.#####",
  "creation": "2025-09-03 09:40:52.829784",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -144,10 +145,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-24 15:21:58.575606",
+ "modified": "2025-10-05 15:23:21.454280",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Admission Form",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

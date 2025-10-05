@@ -20,6 +20,7 @@ def get_patient_details(patient):
 	species_parts = []
 	dob_parts = []
 	vc_chip_id_parts = []
+	patient_name_parts = []
 	patient = json.loads(patient)
 	for p in patient:
 		patient_doc = frappe.get_doc("Patient", p['patient'])
@@ -31,6 +32,7 @@ def get_patient_details(patient):
 		vc_chip_id_parts.append(patient_doc.vc_chip_id if patient_doc.vc_chip_id else '')
 		dob_parts.append(str(patient_doc.dob) if patient_doc.dob else '')
 		vc_neutered_parts.append(patient_doc.vc_neutered if patient_doc.vc_neutered else '')
+		patient_name_parts.append(patient_doc.patient_name if patient_doc.patient_name else '' )
 	breed = ', '.join(breed_parts)
 	body_wgt = ', '.join(body_wgt_parts)
 	gender = ', '.join(gender_parts)
@@ -39,9 +41,9 @@ def get_patient_details(patient):
 	species = ','.join(species_parts)
 	vc_chip_id = ','.join(vc_chip_id_parts)
 	dob = ','.join(dob_parts)
-
+	patient_name = 	', '.join(patient_name_parts)
 					  
-	return {'vc_neutered': vc_neutered, 'breed':breed, 'body_wgt':body_wgt, 'gender': gender, 'color':color, 'species':species, 'microchip_number': vc_chip_id, 'dob_age': dob}
+	return {'vc_neutered': vc_neutered, 'breed':breed, 'body_wgt':body_wgt, 'gender': gender, 'color':color, 'species':species, 'microchip_number': vc_chip_id, 'dob_age': dob, 'patient_fullname':patient_name}
 
 @frappe.whitelist()
 def get_customer_details(customer):

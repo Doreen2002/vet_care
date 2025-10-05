@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "RG-.#####",
  "creation": "2025-09-03 09:50:21.598232",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -119,7 +120,7 @@
    "fieldname": "spayedneutered",
    "fieldtype": "Select",
    "label": "SPAYED/NEUTERED",
-   "options": "Y\nN"
+   "options": "Yes\nNo"
   },
   {
    "fieldname": "body_wt",
@@ -219,10 +220,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-05 10:29:43.136437",
+ "modified": "2025-10-05 15:50:13.136412",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Registration Form",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

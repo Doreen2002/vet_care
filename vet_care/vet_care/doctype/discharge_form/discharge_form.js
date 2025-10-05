@@ -29,7 +29,27 @@ frappe.ui.form.on("Discharge Form", {
 
         
 	},
-  
+    pet_name(frm)
+    {
+        if(frm.doc.pet_name)
+        {
+            frappe.call({
+                method:"vet_care.vet_care.doctype.euthanasia_form.euthanasia_form.get_patient_details",
+                args:{'patient':frm.doc.pet_name},
+                callback: function(r) {
+                    if(r.message)
+                    {
+                       
+                        
+                         frm.set_value("patient_fullname", r.message.patient_fullname);
+                       
+                        frm.refresh_fields();
+
+                    }
+            }     });
+        }
+       
+    },
     pet_owner(frm)
     {
         if(frm.doc.pet_owner)
