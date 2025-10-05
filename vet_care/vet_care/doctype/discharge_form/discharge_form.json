@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "DS-.#####",
  "creation": "2025-09-02 09:20:26.190792",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,6 +12,7 @@
   "owner_phone_no",
   "column_break_faes",
   "pet_name",
+  "patient_fullname",
   "section_break_shap",
   "follow_up_visit_date",
   "column_break_kyrn",
@@ -244,15 +246,22 @@
    "fieldname": "in_recovery_phase",
    "fieldtype": "Check",
    "label": "In recovery phase"
+  },
+  {
+   "fieldname": "patient_fullname",
+   "fieldtype": "Data",
+   "label": "Patient FullName",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-29 14:20:50.133589",
+ "modified": "2025-10-05 16:06:10.415725",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Discharge Form",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

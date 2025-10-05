@@ -43,6 +43,7 @@ frappe.ui.form.on("Surgery Consent Form", {
                         frm.set_value("body_weight", r.message.body_wgt); 
                         frm.set_value("gender", r.message.gender);
                         frm.set_value("color", r.message.color);  
+                         frm.set_value("patient_fullname", r.message.patient_fullname);
                         frm.refresh_fields();
 
                     }

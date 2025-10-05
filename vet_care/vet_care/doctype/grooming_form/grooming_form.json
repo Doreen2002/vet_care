@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "GM-.#####",
  "creation": "2025-09-25 13:59:38.865676",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -301,10 +302,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-05 10:45:23.599003",
+ "modified": "2025-10-05 15:25:41.343555",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Grooming Form",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

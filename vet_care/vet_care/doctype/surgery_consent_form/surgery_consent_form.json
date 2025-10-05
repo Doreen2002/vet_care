@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "SG-.#####",
  "creation": "2025-09-03 09:48:23.158358",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,6 +13,7 @@
   "invoice_no",
   "column_break_lhqz",
   "patient",
+  "patient_fullname",
   "gender",
   "body_weight",
   "color",
@@ -173,19 +175,28 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "patient_fullname",
+   "fieldtype": "Data",
+   "label": "Patient FullName",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-05 10:48:59.458880",
+ "modified": "2025-10-05 16:06:34.859214",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Surgery Consent Form",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -194,7 +205,9 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

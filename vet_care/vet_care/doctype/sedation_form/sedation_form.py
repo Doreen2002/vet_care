@@ -17,6 +17,7 @@ def get_patient_details(patient):
 	gender_parts =[]
 	color_parts =[]
 	vc_neutered_parts =[]
+	
 	patient = json.loads(patient)
 	for p in patient:
 		patient_doc = frappe.get_doc("Patient", p['patient'])
@@ -25,12 +26,13 @@ def get_patient_details(patient):
 		gender_parts.append(patient_doc.sex if patient_doc.sex else '')
 		color_parts.append(patient_doc.vc_color if patient_doc.vc_color else '')
 		vc_neutered_parts.append(patient_doc.vc_neutered if patient_doc.vc_neutered else '')
+		
 	breed = ', '.join(breed_parts)
 	body_wgt = ', '.join(body_wgt_parts)
 	gender = ', '.join(gender_parts)
 	color = ', '.join(color_parts)
 	vc_neutered = ', '.join(vc_neutered_parts)
-					  
+		  
 	return {'vc_neutered': vc_neutered, 'breed':breed, 'body_wgt':body_wgt, 'gender': gender, 'color':color}
 
 @frappe.whitelist()

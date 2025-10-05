@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "EN-.#####",
  "creation": "2025-09-07 11:19:32.115567",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -15,6 +16,7 @@
   "address",
   "section_break_zgft",
   "patients_name",
+  "patient_fullname",
   "species",
   "sex",
   "color",
@@ -200,16 +202,23 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "patient_fullname",
+   "fieldtype": "Data",
+   "label": "Patient FullName",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-05 10:55:20.216160",
+ "modified": "2025-10-05 16:06:55.585156",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Euthanasia Form",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "SD-.#####",
  "creation": "2025-09-03 09:38:08.118384",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -198,10 +199,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-05 10:46:13.465687",
+ "modified": "2025-10-05 15:25:11.018593",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Sedation Form",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
