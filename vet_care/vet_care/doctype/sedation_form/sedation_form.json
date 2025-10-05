@@ -45,7 +45,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "SEDATION FORM",
+   "options": "Sedation Form",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -165,8 +165,9 @@
   },
   {
    "fieldname": "vet_name",
-   "fieldtype": "Data",
-   "label": "VET NAME"
+   "fieldtype": "Link",
+   "label": "VET NAME",
+   "options": "Healthcare Practitioner"
   },
   {
    "fieldname": "section_break_fhvu",
@@ -197,7 +198,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-25 10:25:13.359413",
+ "modified": "2025-10-05 10:46:13.465687",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Sedation Form",
