@@ -59,7 +59,7 @@ function _refresh(frm) {
     "__init"
   ];
   for (const field of fields) {
-    if (core_fields.indexOf(field) === -1) {
+    if (core_fields.indexOf(field) === -1 && frm.fields_dict[field]) {
       frm.set_value(field, null);
     }
   }
