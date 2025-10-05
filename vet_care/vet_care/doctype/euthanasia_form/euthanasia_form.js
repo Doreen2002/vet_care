@@ -47,7 +47,7 @@ frappe.ui.form.on("Euthanasia Form", {
                          frm.set_value('species', r.message.species)
                         frm.set_value('microchip_number', r.message.microchip_number)
                         frm.set_value('dob_age', r.message.dob_age)
-                          
+                         frm.set_value("patient_fullname", r.message.patient_fullname);
                         frm.set_value("spayedneutered", r.message.spayedneutered);  
                         frm.refresh_fields();
 
