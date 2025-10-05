@@ -246,13 +246,11 @@
    "label": "Other Services"
   },
   {
-   "default": "0",
    "fieldname": "addtional_request",
    "fieldtype": "Small Text",
    "label": "Addtional Request"
   },
   {
-   "default": "0",
    "fieldname": "any_medical_conditions_or_allergies",
    "fieldtype": "Small Text",
    "label": "Any Medical Conditions or Allergies"
@@ -302,7 +300,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-05 15:25:41.343555",
+ "modified": "2025-10-05 16:18:37.096833",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Grooming Form",
