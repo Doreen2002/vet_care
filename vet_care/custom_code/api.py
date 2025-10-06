@@ -25,41 +25,44 @@ def get_room_events(healthcare_practitioner):
 
 @frappe.whitelist()
 def create_patient_appointment(data):
-    json_data = frappe._dict(frappe.parse_json(data))
-    data = json_data
-    new_event = frappe.get_doc({
-        "doctype": "Event",
-        "subject":  "Patient Appointment",
-        "event_type": "Public",
-        "starts_on": data.get('starts_on'),
-        "ends_on": data.get('ends_on'),
-        "all_day": 0,
-        "status": "Open",
-        "event_category": "Meeting",
-    })
-    new_event.append("event_participants", {
-        "reference_doctype": "Patient",
-        "reference_docname": data.get('patient')
-    })
-    new_event.append("event_participants", {
-        "reference_doctype": "Healthcare Practitioner",
-        "reference_docname": data.get('healthcare_practitioner')
-    })
-    new_event.save()
-    frappe.db.commit()
-    patient_appointment = frappe.get_doc({
-        "doctype": "Patient Booking",
-        "physician": data.get('healthcare_practitioner'),
-        "patient": data.patient,
-        "appointment_type": data.get('appointment_type'),
-        "customer": data.get('customer'),
-        "posting_date": data.get('starts_on'),
-        "mobile_no": data.get('mobile_no') or "",
-        "appointment_date": data.get('starts_on'),
-        "appointment_time": data.get('starts_on'),
-        "notes": data.get('notes'),
-        "docstatus": 1,
+    try:
+        json_data = frappe._dict(frappe.parse_json(data))
+        data = json_data
+        new_event = frappe.get_doc({
+            "doctype": "Event",
+            "subject":  "Patient Appointment",
+            "event_type": "Public",
+            "starts_on": data.get('starts_on'),
+            "ends_on": data.get('ends_on'),
+            "all_day": 0,
+            "status": "Open",
+            "event_category": "Meeting",
         })
-    patient_appointment.insert(ignore_mandatory=True, ignore_permissions=True)
-    frappe.db.commit()
-    return new_event.name
+        new_event.append("event_participants", {
+            "reference_doctype": "Patient",
+            "reference_docname": data.get('patient')
+        })
+        new_event.append("event_participants", {
+            "reference_doctype": "Healthcare Practitioner",
+            "reference_docname": data.get('healthcare_practitioner')
+        })
+        new_event.save()
+        frappe.db.commit()
+        patient_appointment = frappe.get_doc({
+            "doctype": "Patient Booking",
+            "physician": data.get('healthcare_practitioner'),
+            "patient": data.patient,
+            "appointment_type": data.get('appointment_type'),
+            "customer": data.get('customer'),
+            "posting_date": data.get('starts_on'),
+            "mobile_no": data.get('mobile_no') or "",
+            "appointment_date": data.get('starts_on'),
+            "appointment_time": data.get('starts_on'),
+            "notes": data.get('notes'),
+            "docstatus": 1,
+            })
+        patient_appointment.save( ignore_permissions=True)
+        frappe.db.commit()
+        return new_event.name
+    except Exception as e:
+        frappe.throw(f"Error {e}")
