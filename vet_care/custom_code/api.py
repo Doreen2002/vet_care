@@ -59,9 +59,10 @@ def create_patient_appointment(data):
             "appointment_date": data.get('starts_on'),
             "appointment_time": data.get('starts_on'),
             "notes": data.get('notes'),
-            "docstatus": 1,
+          
             })
-        patient_appointment.save( ignore_permissions=True)
+        patient_appointment.save(ignore_permissions=True )
+        patient_appointment.submit( )
         frappe.db.commit()
         return new_event.name
     except Exception as e:
