@@ -66,6 +66,7 @@ fixtures = [
                     "Sales Invoice-vc_zip_code",
                     "Sales Invoice Item-vc_sales_person",
                     "Sales Invoice Item-vc_sales_person_name"
+                    
                 ]
             ]
         ]
@@ -151,7 +152,9 @@ fixtures = [
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/vet_care/css/vet_care.css"
-app_include_js = "/assets/js/vet_care.min.js"
+app_include_js =["/assets/js/vet_care.min.js","/assets/calendarx/node_modules/fullcalendar-scheduler/index.global.js",
+			"/assets/calendarx/node_modules/fullcalendar-scheduler/index.global.min.js",
+            "/assets/calendarx/node_modules/fullcalendar-scheduler/index.js"]
 
 # include js, css files in header of web template
 # web_include_css = "/assets/vet_care/css/vet_care.css"
@@ -171,7 +174,8 @@ doctype_js = {
     "Patient Appointment": "public/js/patient_appointment.js",
     "Customer": "public/js/customer.js",
     "Animal Overview": "public/js/animal_overview.js",
-    "Healthcare Practitioner": "public/js/healthcare_practitioner.js"
+    "Healthcare Practitioner": "public/js/healthcare_practitioner.js",
+    "POS Profile": "public/js/pos_profile.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}

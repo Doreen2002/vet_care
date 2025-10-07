@@ -1,5 +1,5 @@
 import utils from './utils';
-
+import FullCalendar from 'fullcalendar-scheduler';
 frappe.provide('vet_care');
 
 vet_care = { utils };
