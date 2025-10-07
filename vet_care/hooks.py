@@ -65,8 +65,8 @@ fixtures = [
                     "Customer-vc_zip_code",
                     "Sales Invoice-vc_zip_code",
                     "Sales Invoice Item-vc_sales_person",
-                    "Sales Invoice Item-vc_sales_person_name",
-                    "POS Profile-naming_series"
+                    "Sales Invoice Item-vc_sales_person_name"
+                    
                 ]
             ]
         ]
@@ -174,7 +174,8 @@ doctype_js = {
     "Patient Appointment": "public/js/patient_appointment.js",
     "Customer": "public/js/customer.js",
     "Animal Overview": "public/js/animal_overview.js",
-    "Healthcare Practitioner": "public/js/healthcare_practitioner.js"
+    "Healthcare Practitioner": "public/js/healthcare_practitioner.js",
+    "POS Profile": "public/js/pos_profile.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
