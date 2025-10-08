@@ -251,6 +251,11 @@ doc_events = {
     "Vital Signs": {
         "validate": "vet_care.doc_events.vital_signs.validate",
         "on_submit": "vet_care.doc_events.vital_signs.on_submit"
+    },
+    "Registration Form":
+    {
+         "validate": "vet_care.vet_care.doctype.registration_form.registration_form.validate",
+        "on_submit": "vet_care.vet_care.doctype.registration_form.registration_form.on_submit"
     }
 }
 
