@@ -36,6 +36,13 @@ frappe.ui.form.on('Animal Overview', {
         _set_actions(frm);
         _set_form_buttons_color();
         _set_attach_read_only(frm);
+        cur_frm.fields_dict['items'].grid.get_field('uom').get_query = function(doc, cdt, cdn) {
+      const row = frappe.get_doc(cdt, cdn);
+      return {
+        query: 'pos_bahrain.api.item.query_uom',
+        filters: { item_code: row.item_code }
+      };
+    };
     },
     inpatient: async function(frm) {
         if (!frm.doc.animal) return; // if (!frm.doc.animal || frm.doc.__init) return;
