@@ -5,6 +5,8 @@
  "creation": "2025-09-03 09:38:08.118384",
  "doctype": "DocType",
  "engine": "InnoDB",
+ "default_print_format":"Sedation Form",
+ "custom":1,
  "field_order": [
   "section_break_fjkp",
   "client",
