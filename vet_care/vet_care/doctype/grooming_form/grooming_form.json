@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "default_print_format":"Grooming Form",
+ "custom":1,
  "field_order": [
   "grooming_employee",
   "column_break_cxlh",

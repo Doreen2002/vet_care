@@ -6,6 +6,12 @@ from frappe.model.document import Document
 
 
 class RegistrationForm(Document):
+	def validate(self):
+		cpr_exists = frappe.db.exists("Customer", {"vc_cpr":self.cpr_no}) or  frappe.db.exists("Customer", {"cr_no":self.cpr_no})
+		mobile_no_exists = frappe.db.exists("Customer", {"mobile_number":self.mobile_no})
+		email_exists = frappe.db.exists("Customer", {"email_info":self.email})
+		if cpr_exists or mobile_no_exists or email_exists:
+			frappe.throw("Customer ID already available with the cpr/mobile/email where the match is found.")
 	def on_submit(self):
 		if self.agree_to_terms_and_conditions != 1:
 			return frappe.throw("You must agree to the terms and conditions before submitting the form.")
