@@ -5,6 +5,8 @@
  "creation": "2025-09-03 09:48:23.158358",
  "doctype": "DocType",
  "engine": "InnoDB",
+ "default_print_format":"Surgery Consent Form",
+ "custom":1,
  "field_order": [
   "date",
   "owneragent_name",

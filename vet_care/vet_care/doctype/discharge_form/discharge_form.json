@@ -5,6 +5,8 @@
  "creation": "2025-09-02 09:20:26.190792",
  "doctype": "DocType",
  "engine": "InnoDB",
+ "default_print_format":"Discharge Form",
+ "custom":1,
  "field_order": [
   "date",
   "column_break_nksc",

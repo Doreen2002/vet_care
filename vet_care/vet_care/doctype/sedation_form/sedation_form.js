@@ -10,7 +10,7 @@ frappe.ui.form.on("Sedation Form", {
                 }
             }
         })
-        frappe.db.get_doc('Vetcare Settings').then(doc => {
+        frappe.db.get_doc('VetCare Terms Settings').then(doc => {
             if(doc)
             {
                 cur_frm.set_df_property("html_eyfd","options", doc.sedation_terms);

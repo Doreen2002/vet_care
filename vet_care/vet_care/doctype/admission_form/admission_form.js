@@ -19,7 +19,7 @@ frappe.ui.form.on("Admission Form", {
         })
         
 
-        frappe.db.get_doc('Vetcare Settings').then(doc => {
+        frappe.db.get_doc('VetCare Terms Settings').then(doc => {
             if(doc)
             {
                 cur_frm.set_df_property("terms_and_conditions","options", doc.admission_form_text);

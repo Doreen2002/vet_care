@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "creation": "2025-10-07 09:56:09.785379",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_naxj",
+  "admission_form_text",
+  "sedation_terms",
+  "discharge_terms",
+  "column_break_k7re",
+  "surgery_form",
+  "euthanasia_terms"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_naxj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "admission_form_text",
+   "fieldtype": "HTML Editor",
+   "label": "Admission Form Text"
+  },
+  {
+   "fieldname": "sedation_terms",
+   "fieldtype": "HTML Editor",
+   "label": "SEDATION Terms"
+  },
+  {
+   "fieldname": "discharge_terms",
+   "fieldtype": "HTML Editor",
+   "label": "Discharge Terms"
+  },
+  {
+   "fieldname": "column_break_k7re",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "surgery_form",
+   "fieldtype": "HTML Editor",
+   "label": "Surgery Terms"
+  },
+  {
+   "fieldname": "euthanasia_terms",
+   "fieldtype": "HTML Editor",
+   "label": "Euthanasia Terms"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-10-07 09:57:54.095279",
+ "modified_by": "Administrator",
+ "module": "Vet Care",
+ "name": "VetCare Terms Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

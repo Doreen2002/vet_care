@@ -5,7 +5,12 @@
  "creation": "2025-09-25 13:59:38.865676",
  "doctype": "DocType",
  "engine": "InnoDB",
+ "default_print_format":"Grooming Form",
+ "custom":1,
  "field_order": [
+  "grooming_employee",
+  "column_break_cxlh",
+  "groomer",
   "section_break_gjoo",
   "amended_from",
   "customer_name",
@@ -15,6 +20,7 @@
   "column_break_kkah",
   "date",
   "price",
+  "no_of_pets",
   "section_break_heac",
   "patient",
   "species",
@@ -47,6 +53,7 @@
   "section_break_btzi",
   "html_editor_rvye",
   "agree_to_terms_and_conditions",
+  "comments",
   "section_break_zhii",
   "for_my_pet",
   "column_break_evgm",
@@ -294,13 +301,39 @@
    "fieldtype": "Table MultiSelect",
    "label": "Invoices",
    "options": "Sales Invoice MultiSelect"
+  },
+  {
+   "fieldname": "grooming_employee",
+   "fieldtype": "Link",
+   "label": "Grooming Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_cxlh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "groomer",
+   "fieldtype": "Table MultiSelect",
+   "label": "Groomer",
+   "options": "Health Practitioner Table"
+  },
+  {
+   "fieldname": "no_of_pets",
+   "fieldtype": "Int",
+   "label": "No of Pets"
+  },
+  {
+   "fieldname": "comments",
+   "fieldtype": "Small Text",
+   "label": "Remarks / Comments"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-05 16:18:37.096833",
+ "modified": "2025-10-08 09:34:57.523412",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Grooming Form",
