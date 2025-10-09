@@ -6,7 +6,6 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "default_print_format":"Surgery Consent Form",
- "custom":1,
  "field_order": [
   "date",
   "owneragent_name",

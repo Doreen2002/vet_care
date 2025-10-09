@@ -6,7 +6,6 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "default_print_format":"Discharge Form",
- "custom":1,
  "field_order": [
   "date",
   "column_break_nksc",

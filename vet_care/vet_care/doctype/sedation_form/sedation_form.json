@@ -6,7 +6,6 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "default_print_format":"Sedation Form",
- "custom":1,
  "field_order": [
   "section_break_fjkp",
   "client",
