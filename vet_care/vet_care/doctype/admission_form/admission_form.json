@@ -6,7 +6,6 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "default_print_format":"Admission Form",
- "custom":1,
  "field_order": [
   "client",
   "address",
