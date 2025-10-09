@@ -458,9 +458,9 @@ function _get_table_rows(records, fields) {
 			}
 			if (field === 'name') {
 			    const ref_type = record['ref_type'] === 'pa'
-			        ? 'Patient%20Activity'
-			        : 'Sales%20Invoice';
-			    const link = `/desk#Form/${ref_type}/${record[field]}`;
+			        ? 'patient-activity'
+			        : 'sales-invoice';
+			    const link = `/app/${ref_type}/${record[field]}`;
 			    return `
 			        <td>
 			            <a href=${link}>${record[field]}</a>
