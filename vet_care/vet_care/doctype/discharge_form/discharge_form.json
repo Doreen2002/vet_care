@@ -42,6 +42,8 @@
   "data_wqug",
   "special_instructions_if_any_section",
   "small_text_mplj",
+  "section_break_rcob",
+  "terms",
   "section_break_yxip",
   "agree_to_terms_and_conditions",
   "section_break_zssu",
@@ -253,12 +255,20 @@
    "fieldtype": "Data",
    "label": "Patient FullName",
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_rcob",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "terms",
+   "fieldtype": "HTML"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-05 16:06:10.415725",
+ "modified": "2025-10-09 12:30:05.163505",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Discharge Form",
@@ -281,5 +291,6 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }
