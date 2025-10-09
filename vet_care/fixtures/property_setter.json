@@ -957,7 +957,7 @@
   "property": "search_fields",
   "property_type": "Data",
   "row_name": null,
-  "value": "patient_name,mobile,email,phone"
+  "value": "patient_name,mobile,email,phone,vc_chip_id"
  },
  {
   "default_value": null,
