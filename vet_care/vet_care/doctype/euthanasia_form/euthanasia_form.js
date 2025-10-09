@@ -13,7 +13,7 @@ frappe.ui.form.on("Euthanasia Form", {
         frappe.db.get_doc('VetCare Terms Settings').then(doc => {
             if(doc)
             {
-                cur_frm.set_df_property("html_dhij","options", doc.euthanasia_terms);
+                cur_frm.set_df_property("terms","options", doc.euthanasia_terms);
                 
                 cur_frm.refresh_fields();
             }
