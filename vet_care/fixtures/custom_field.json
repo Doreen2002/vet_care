@@ -392,7 +392,7 @@
   "dt": "Sales Invoice Item",
   "fetch_from": null,
   "fetch_if_empty": 0,
-  "fieldname": "custom_dosage",
+  "fieldname": "dosage",
   "fieldtype": "Data",
   "hidden": 0,
   "hide_border": 0,
