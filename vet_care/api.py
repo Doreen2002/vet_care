@@ -7,7 +7,7 @@ from frappe.custom.doctype.custom_field.custom_field import create_custom_field
 from erpnext.accounts.doctype.sales_invoice.sales_invoice import get_bank_cash_account
 from toolz import pluck, partial, compose, first, concat
 from vet_care.utils import timedelta_to_default_format
-
+from vet_care.vet_care.doctype.animal_overview.animal_overview import validate_medicine_for_dosage
 
 @frappe.whitelist()
 def get_pet_relations(pet):
@@ -115,6 +115,7 @@ def get_medical_records(patient):
 @frappe.whitelist()
 def save_invoice(items, patient, customer, **kwargs):
     items = json.loads(items)
+    validate_medicine_for_dosage(items)
     sales_person = kwargs.get("sales_person")
     existing_invoice = kwargs.get("existing_invoice")
     discount_amount = kwargs.get("discount_amount")
@@ -156,6 +157,7 @@ def save_invoice(items, patient, customer, **kwargs):
                 "rate": item.get("rate"),
                 "warehouse": item.get("warehouse"),
                 "batch_no": item.get("batch_no"),
+                "dosage":item.get("dosage")
             },
         )
 
@@ -325,7 +327,7 @@ def get_invoice_items(invoice):
     return frappe.get_all(
         "Sales Invoice Item",
         filters={"parent": invoice},
-        fields=["item_code", "item_name", "qty", "rate", "amount"],
+        fields=["item_code", "item_name", "qty", "rate", "amount", "dosage"],
     )
 
 

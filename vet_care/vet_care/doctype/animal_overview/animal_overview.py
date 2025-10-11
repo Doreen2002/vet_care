@@ -14,6 +14,17 @@ from erpnext.controllers.queries import get_fields
 class AnimalOverview(Document):
 	def validate(self):
 		_set_attach_to_animal(self)
+		
+
+
+
+def validate_medicine_for_dosage(items):
+	if len(items) > 0:
+		for item in items:
+			is_medicine = frappe.db.get_value("Item", item.get('item_code'),"custom_medicine")
+			if is_medicine == 1 and not item.get('dosage'):
+				return frappe.throw(f"Add Dosage for {item.get('item_code')}")
+				
 
 
 # searches for customer
