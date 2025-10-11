@@ -156,6 +156,7 @@ def save_invoice(items, patient, customer, **kwargs):
                 "rate": item.get("rate"),
                 "warehouse": item.get("warehouse"),
                 "batch_no": item.get("batch_no"),
+                "custom_dosage":item.get("dosage")
             },
         )
 

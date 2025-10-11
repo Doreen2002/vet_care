@@ -65,7 +65,9 @@ fixtures = [
                     "Customer-vc_zip_code",
                     "Sales Invoice-vc_zip_code",
                     "Sales Invoice Item-vc_sales_person",
-                    "Sales Invoice Item-vc_sales_person_name"
+                    "Sales Invoice Item-vc_sales_person_name",
+                    "Item-custom_medicine",
+                    "Sales Invoice Item-custom_dosage"
                     
                 ]
             ]
