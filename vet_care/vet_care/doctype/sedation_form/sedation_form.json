@@ -9,6 +9,7 @@
  "field_order": [
   "section_break_fjkp",
   "client",
+  "customer_fullname", 
   "address",
   "amended_from",
   "column_break_msfp",
@@ -60,6 +61,12 @@
    "label": "CLIENT",
    "options": "Customer",
    "reqd": 1
+  },
+   {
+   "fieldname": "customer_fullname", 
+   "fieldtype": "Data",
+   "label": "Customer FullName", 
+   "read_only": 1
   },
   {
    "fieldname": "column_break_msfp",

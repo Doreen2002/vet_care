@@ -13,6 +13,7 @@
   "section_break_gjoo",
   "amended_from",
   "customer_name",
+  "customer_fullname", 
   "email",
   "contact_no",
   "cpr_no",
@@ -79,6 +80,12 @@
    "fieldtype": "Link",
    "label": "Customer Name",
    "options": "Customer"
+  },
+   {
+   "fieldname": "customer_fullname", 
+   "fieldtype": "Data",
+   "label": "Customer FullName", 
+   "read_only": 1
   },
   {
    "fieldname": "email",

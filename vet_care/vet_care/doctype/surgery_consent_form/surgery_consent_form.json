@@ -9,6 +9,7 @@
  "field_order": [
   "date",
   "owneragent_name",
+  "customer_fullname", 
   "mobile_no",
   "cpr",
   "invoice_no",
@@ -48,6 +49,12 @@
    "label": "Owner/Agent Name",
    "options": "Customer",
    "reqd": 1
+  },
+   {
+   "fieldname": "customer_fullname", 
+   "fieldtype": "Data",
+   "label": "Customer FullName", 
+   "read_only": 1
   },
   {
    "fieldname": "mobile_no",

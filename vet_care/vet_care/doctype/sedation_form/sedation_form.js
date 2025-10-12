@@ -66,7 +66,7 @@ frappe.ui.form.on("Sedation Form", {
                         frm.set_value("cpr", r.message.cpr_no);
                         frm.set_value("email", r.message.email); 
                         frm.set_value("address", r.message.address);
-                       
+                        frm.set_value("customer_fullname", r.message.customer_fullname);
                           
                         frm.refresh_fields();
 
