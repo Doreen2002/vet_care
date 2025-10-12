@@ -22,6 +22,7 @@
   "no_of_pets",
   "section_break_heac",
   "patient",
+  "patient_fullname",
   "species",
   "age",
   "column_break_onto",
@@ -137,6 +138,12 @@
    "fieldtype": "Table MultiSelect",
    "label": "Patient",
    "options": "Patient MultiSelect"
+  },
+  {
+   "fieldname": "patient_fullname",
+   "fieldtype": "Data",
+   "label": "Patient FullName",
+   "read_only": 1
   },
   {
    "fieldname": "age",
