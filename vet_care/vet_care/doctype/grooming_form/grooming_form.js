@@ -13,7 +13,7 @@ frappe.ui.form.on("Grooming Form", {
         frappe.db.get_doc('VetCare Terms Settings').then(doc => {
             if(doc)
             {
-                cur_frm.set_df_property("html_editor_rvye","options", doc.dgrooming_terms);
+                cur_frm.set_df_property("html_editor_rvye","options", doc.grooming_terms);
                 
                 cur_frm.refresh_fields();
             }
