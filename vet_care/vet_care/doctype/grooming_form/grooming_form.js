@@ -44,7 +44,7 @@ frappe.ui.form.on("Grooming Form", {
                         frm.set_value("contact_no", r.message.mobile_no); 
                         frm.set_value("cpr_no", r.message.cpr_no);
                         frm.set_value("email", r.message.email);
-                       
+                        
                           
                         frm.refresh_fields();
 
@@ -67,7 +67,7 @@ frappe.ui.form.on("Grooming Form", {
                         frm.set_value("breed", r.message.breed);
                         frm.set_value("species", r.message.species);
                         frm.set_value("age", r.message.dob_age);
-                      
+                      frm.set_value("patient_fullname", r.message.patient_fullname);
                         frm.refresh_fields();
 
                     }
