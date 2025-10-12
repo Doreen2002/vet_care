@@ -13,7 +13,7 @@ frappe.ui.form.on("Grooming Form", {
         frappe.db.get_doc('VetCare Terms Settings').then(doc => {
             if(doc)
             {
-                cur_frm.set_df_property("html_editor_rvye","options", doc.dgrooming_terms);
+                cur_frm.set_df_property("html_editor_rvye","options", doc.grooming_terms);
                 
                 cur_frm.refresh_fields();
             }
@@ -44,7 +44,7 @@ frappe.ui.form.on("Grooming Form", {
                         frm.set_value("contact_no", r.message.mobile_no); 
                         frm.set_value("cpr_no", r.message.cpr_no);
                         frm.set_value("email", r.message.email);
-                       
+                        frm.set_value("customer_fullname", r.message.customer_fullname);
                           
                         frm.refresh_fields();
 
@@ -67,7 +67,7 @@ frappe.ui.form.on("Grooming Form", {
                         frm.set_value("breed", r.message.breed);
                         frm.set_value("species", r.message.species);
                         frm.set_value("age", r.message.dob_age);
-                      
+                      frm.set_value("patient_fullname", r.message.patient_fullname);
                         frm.refresh_fields();
 
                     }

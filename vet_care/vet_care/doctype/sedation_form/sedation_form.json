@@ -9,6 +9,7 @@
  "field_order": [
   "section_break_fjkp",
   "client",
+  "customer_fullname", 
   "address",
   "amended_from",
   "column_break_msfp",
@@ -19,6 +20,7 @@
   "email",
   "section_break_dccy",
   "patient",
+  "patient_fullname",
   "body_weight",
   "gender",
   "column_break_vhaq",
@@ -60,6 +62,12 @@
    "options": "Customer",
    "reqd": 1
   },
+   {
+   "fieldname": "customer_fullname", 
+   "fieldtype": "Data",
+   "label": "Customer FullName", 
+   "read_only": 1
+  },
   {
    "fieldname": "column_break_msfp",
    "fieldtype": "Column Break"
@@ -70,6 +78,12 @@
    "label": "PATIENT",
    "options": "Patient MultiSelect",
    "reqd": 1
+  },
+  {
+   "fieldname": "patient_fullname",
+   "fieldtype": "Data",
+   "label": "Patient FullName",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_aiwk",

@@ -62,7 +62,7 @@ frappe.ui.form.on("Discharge Form", {
                     {
                        
                         frm.set_value("owner_phone_no", r.message.mobile_no); 
-                        
+                            frm.set_value("customer_fullname", r.message.customer_fullname);
                        
                           
                         frm.refresh_fields();

@@ -13,6 +13,7 @@
   "section_break_gjoo",
   "amended_from",
   "customer_name",
+  "customer_fullname", 
   "email",
   "contact_no",
   "cpr_no",
@@ -22,6 +23,7 @@
   "no_of_pets",
   "section_break_heac",
   "patient",
+  "patient_fullname",
   "species",
   "age",
   "column_break_onto",
@@ -78,6 +80,12 @@
    "fieldtype": "Link",
    "label": "Customer Name",
    "options": "Customer"
+  },
+   {
+   "fieldname": "customer_fullname", 
+   "fieldtype": "Data",
+   "label": "Customer FullName", 
+   "read_only": 1
   },
   {
    "fieldname": "email",
@@ -137,6 +145,12 @@
    "fieldtype": "Table MultiSelect",
    "label": "Patient",
    "options": "Patient MultiSelect"
+  },
+  {
+   "fieldname": "patient_fullname",
+   "fieldtype": "Data",
+   "label": "Patient FullName",
+   "read_only": 1
   },
   {
    "fieldname": "age",

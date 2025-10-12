@@ -10,6 +10,7 @@
   "section_break_vnnf",
   "date",
   "clients_name",
+  "customer_fullname",
   "mobile_no",
   "email",
   "column_break_yhcc",
@@ -52,6 +53,12 @@
    "label": "CLIENTS NAME",
    "options": "Customer",
    "reqd": 1
+  },
+   {
+   "fieldname": "customer_fullname", 
+   "fieldtype": "Data",
+   "label": "Customer FullName", 
+   "read_only": 1
   },
   {
    "fieldname": "mobile_no",

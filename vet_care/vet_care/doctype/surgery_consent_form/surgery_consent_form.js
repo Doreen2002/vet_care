@@ -64,7 +64,7 @@ frappe.ui.form.on("Surgery Consent Form", {
                        
                         frm.set_value("mobile_no", r.message.mobile_no); 
                         frm.set_value("cpr", r.message.cpr_no);
-                       
+                        frm.set_value("customer_fullname", r.message.customer_fullname);
                           
                         frm.refresh_fields();
 

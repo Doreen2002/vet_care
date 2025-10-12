@@ -11,7 +11,8 @@
   "discharge_terms",
   "column_break_k7re",
   "surgery_form",
-  "euthanasia_terms"
+  "euthanasia_terms",
+  "grooming_terms"
  ],
  "fields": [
   {
@@ -46,12 +47,17 @@
    "fieldname": "euthanasia_terms",
    "fieldtype": "HTML Editor",
    "label": "Euthanasia Terms"
+  },
+  {
+   "fieldname": "grooming_terms",
+   "fieldtype": "HTML Editor",
+   "label": "Grooming Terms"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-10-07 09:57:54.095279",
- "modified_by": "Administrator",
+ "modified": "2025-10-12 15:31:23.438068",
+ "modified_by": "test@gmail.com",
  "module": "Vet Care",
  "name": "VetCare Terms Settings",
  "owner": "Administrator",

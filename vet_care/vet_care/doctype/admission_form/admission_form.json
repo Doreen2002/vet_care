@@ -8,6 +8,7 @@
   "default_print_format":"Admission Form",
  "field_order": [
   "client",
+  "customer_fullname", 
   "address",
   "mobile",
   "cpr",
@@ -16,6 +17,7 @@
   "column_break_nvua",
   "date",
   "patient",
+  "patient_fullname",
   "breed",
   "body_weight",
   "color",
@@ -36,6 +38,12 @@
    "label": "Client",
    "options": "Customer",
    "reqd": 1
+  },
+   {
+   "fieldname": "customer_fullname", 
+   "fieldtype": "Data",
+   "label": "Customer FullName", 
+   "read_only": 1
   },
   {
    "fieldname": "address",
@@ -83,6 +91,12 @@
    "label": "Patient",
    "options": "Patient MultiSelect",
    "reqd": 1
+  },
+  {
+   "fieldname": "patient_fullname",
+   "fieldtype": "Data",
+   "label": "Patient FullName",
+   "read_only": 1
   },
   {
    "fieldname": "breed",
