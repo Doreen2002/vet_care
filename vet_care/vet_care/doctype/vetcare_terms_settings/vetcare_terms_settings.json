@@ -9,6 +9,7 @@
   "admission_form_text",
   "sedation_terms",
   "discharge_terms",
+  "registration_terms",
   "column_break_k7re",
   "surgery_form",
   "euthanasia_terms",
@@ -52,11 +53,16 @@
    "fieldname": "grooming_terms",
    "fieldtype": "HTML Editor",
    "label": "Grooming Terms"
+  },
+  {
+   "fieldname": "registration_terms",
+   "fieldtype": "HTML Editor",
+   "label": "Registration Terms"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-10-12 15:31:23.438068",
+ "modified": "2025-10-12 17:39:32.288617",
  "modified_by": "test@gmail.com",
  "module": "Vet Care",
  "name": "VetCare Terms Settings",

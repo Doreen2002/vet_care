@@ -35,6 +35,7 @@
   "regular_diet",
   "previous_veterinarian",
   "section_break_splg",
+  "html_editor_rvye",
   "agree_to_terms_and_conditions",
   "section_break_ubon",
   "column_break_ijhk",
@@ -164,6 +165,10 @@
   {
    "fieldname": "section_break_splg",
    "fieldtype": "Section Break"
+  },
+   {
+   "fieldname": "html_editor_rvye",
+   "fieldtype": "HTML"
   },
   {
    "default": "0",
