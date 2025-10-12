@@ -19,6 +19,7 @@
   "email",
   "section_break_dccy",
   "patient",
+  "patient_fullname",
   "body_weight",
   "gender",
   "column_break_vhaq",
@@ -70,6 +71,12 @@
    "label": "PATIENT",
    "options": "Patient MultiSelect",
    "reqd": 1
+  },
+  {
+   "fieldname": "patient_fullname",
+   "fieldtype": "Data",
+   "label": "Patient FullName",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_aiwk",

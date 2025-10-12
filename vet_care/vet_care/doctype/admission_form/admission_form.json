@@ -16,6 +16,7 @@
   "column_break_nvua",
   "date",
   "patient",
+  "patient_fullname",
   "breed",
   "body_weight",
   "color",
@@ -83,6 +84,12 @@
    "label": "Patient",
    "options": "Patient MultiSelect",
    "reqd": 1
+  },
+  {
+   "fieldname": "patient_fullname",
+   "fieldtype": "Data",
+   "label": "Patient FullName",
+   "read_only": 1
   },
   {
    "fieldname": "breed",
