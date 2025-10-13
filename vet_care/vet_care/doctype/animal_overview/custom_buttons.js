@@ -5,6 +5,10 @@ function set_custom_buttons(frm) {
       onclick: () => _refresh(frm),
     },
     {
+      label: __("Print"),
+      onclick: () => print(),
+    },
+    {
       label: __("View Calendar"),
       onclick: () => _view_calendar(frm),
     },

@@ -13,7 +13,7 @@
   "section_break_gjoo",
   "amended_from",
   "customer_name",
-  "customer_fullname", 
+  "customer_fullname",
   "email",
   "contact_no",
   "cpr_no",
@@ -22,13 +22,8 @@
   "price",
   "no_of_pets",
   "section_break_heac",
-  "patient",
-  "patient_fullname",
-  "species",
-  "age",
-  "column_break_onto",
-  "size",
-  "breed",
+  "grooming_patient_details",
+  "section_break_hmjp",
   "invoices",
   "section_break_bsco",
   "full_grooming",
@@ -81,10 +76,10 @@
    "label": "Customer Name",
    "options": "Customer"
   },
-   {
-   "fieldname": "customer_fullname", 
+  {
+   "fieldname": "customer_fullname",
    "fieldtype": "Data",
-   "label": "Customer FullName", 
+   "label": "Customer FullName",
    "read_only": 1
   },
   {
@@ -123,44 +118,6 @@
   {
    "fieldname": "section_break_heac",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "species",
-   "fieldtype": "Link",
-   "label": "Species",
-   "options": "Species"
-  },
-  {
-   "fieldname": "column_break_onto",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "size",
-   "fieldtype": "Select",
-   "label": "Size",
-   "options": "S\nM\nL"
-  },
-  {
-   "fieldname": "patient",
-   "fieldtype": "Table MultiSelect",
-   "label": "Patient",
-   "options": "Patient MultiSelect"
-  },
-  {
-   "fieldname": "patient_fullname",
-   "fieldtype": "Data",
-   "label": "Patient FullName",
-   "read_only": 1
-  },
-  {
-   "fieldname": "age",
-   "fieldtype": "Data",
-   "label": "Age"
-  },
-  {
-   "fieldname": "breed",
-   "fieldtype": "Data",
-   "label": "Breed"
   },
   {
    "fieldname": "section_break_bsco",
@@ -340,14 +297,24 @@
    "fieldname": "comments",
    "fieldtype": "Small Text",
    "label": "Remarks / Comments"
+  },
+  {
+   "fieldname": "grooming_patient_details",
+   "fieldtype": "Table",
+   "label": "Grooming Patient Details",
+   "options": "Grooming Patient Details"
+  },
+  {
+   "fieldname": "section_break_hmjp",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-08 09:34:57.523412",
- "modified_by": "Administrator",
+ "modified": "2025-10-13 17:00:17.049295",
+ "modified_by": "test@gmail.com",
  "module": "Vet Care",
  "name": "Grooming Form",
  "naming_rule": "Expression",
