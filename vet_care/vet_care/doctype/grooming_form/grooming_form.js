@@ -3,13 +3,15 @@
 
 frappe.ui.form.on("Grooming Form", {
 		refresh(frm) {
-        frm.set_query('patient', () => {
-            return {
-                filters: {
-                    customer: frm.doc.customer_name
-                }
-            }
-        })
+        frm.set_query('patient', 'grooming_patient_details', function (doc, cdt, cdn) {
+                const row = locals[cdt][cdn];
+                return {
+                    filters: {
+                        customer: frm.doc.customer_name
+                    }
+                };
+            });
+
         frappe.db.get_doc('VetCare Terms Settings').then(doc => {
             if(doc)
             {
@@ -32,6 +34,14 @@ frappe.ui.form.on("Grooming Form", {
   
     customer_name(frm)
     {
+        frm.set_query('patient', 'grooming_patient_details', function (doc, cdt, cdn) {
+                const row = locals[cdt][cdn];
+                return {
+                    filters: {
+                        customer: frm.doc.customer_name
+                    }
+                };
+            });
         if(frm.doc.customer_name)
         {
             frappe.call({
@@ -53,26 +63,27 @@ frappe.ui.form.on("Grooming Form", {
         }
        
     },
-    patient(frm)
-    {
-        if(frm.doc.patient)
-        {
-            frappe.call({
-                method:"vet_care.vet_care.doctype.euthanasia_form.euthanasia_form.get_patient_details",
-                args:{'patient':frm.doc.patient},
-                callback: function(r) {
-                    if(r.message)
-                    {
-                       
-                        frm.set_value("breed", r.message.breed);
-                        frm.set_value("species", r.message.species);
-                        frm.set_value("age", r.message.dob_age);
-                      frm.set_value("patient_fullname", r.message.patient_fullname);
-                        frm.refresh_fields();
+   
+});
 
+frappe.ui.form.on("Grooming Patient Details", {
+    patient(frm, cdt, cdn) {
+        let row = locals[cdt][cdn];
+        console.log( row.patient )
+        if (row.patient) {
+            frappe.call({
+                method: "vet_care.vet_care.doctype.euthanasia_form.euthanasia_form.get_patient_details",
+                args:{'patient':[{'patient':row.patient}]},
+                callback: function (r) {
+                    if (r.message) {
+                      
+                        frappe.model.set_value(cdt, cdn, "breed", r.message.breed);
+                        frappe.model.set_value(cdt, cdn, "species", r.message.species);
+                        frappe.model.set_value(cdt, cdn, "age", r.message.dob_age);
+                        frappe.model.set_value(cdt, cdn, "patient_fullname", r.message.patient_fullname);
                     }
-            }     });
+                }
+            });
         }
-       
-    },
+    }
 });
