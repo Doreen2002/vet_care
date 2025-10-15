@@ -11,12 +11,20 @@ from functools import partial
 
 from frappe.desk.reportview import get_match_cond, get_filters_cond
 from erpnext.controllers.queries import get_fields
+from frappe import render_template
+import json
 class AnimalOverview(Document):
 	def validate(self):
 		_set_attach_to_animal(self)
 		
 
-
+@frappe.whitelist()
+def get_print_dosage(doc):
+	try:
+		doc=json.loads(doc)
+		return render_template("templates/print_formats/dosage_record.html", context=doc)
+	except Exception as e:
+		frappe.throw(_("Error in generating print format: {0}").format(e))
 
 def validate_medicine_for_dosage(items):
 	if len(items) > 0:

@@ -1,0 +1,83 @@
+  <html>
+<head>
+<title>Print Preview</title>
+<style>
+@page {
+margin: 0; 
+}
+body {
+font-family: Arial, sans-serif;
+font-size: 10pt;
+margin: 10px;
+}
+.print-format table, .print-format tr, 
+	.print-format td, .print-format div, .print-format p {
+		font-family: arial;
+		line-height: 100%;
+		vertical-align: middle;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 95%;
+	}
+	@media screen {
+		.print-format {
+			width: 1.97in;
+			padding: 0.05in;
+			min-height: 0.70in;
+			 
+		}
+	}
+    @media print {
+  footer {page-break-after: always;}
+}
+
+.flex{
+    display:flex;
+    justify-content:space-between;
+    margin:4px 2px;
+    }
+    .text-center
+    {
+        text-align:center;
+    }
+*{
+        font-family:Verdana;
+        
+    }
+    .bold
+    { font-weight:bold;
+        
+    }
+</style>
+</head>
+<body>
+    
+
+
+		
+		<p class="text-center" style="font-size:8px">
+<b class="text-center" style="font-size:8px"> {{doc.company }}</b> 
+<div class = "flex justify-content" style="font-size:8px" > <div><b>{{doc.pb_sales_employee_name }}  </b> </div></b>   
+
+<div style="font-size:8px" ><b>PH: 39452112</b></div>
+</div>
+<div class = "flex justify-content" style="font-size:8px" > <div>Pet Name : {{doc.patient_name}} </div></b>
+<div style="font-size:8px" >Date : {{ frappe.format(doc.posting_date, {'fieldtype':'Date'}) }}</div>
+
+</div>
+
+<div class = "flex justify-content" style="font-size:8px" > <div>Owner : {{doc.customer_name}}</div>
+<div style="font-size:8px" >Species : {{frappe.db.get_value("Patient", doc.patient, "vc_species")}}</div>
+</div>
+<div style="font-size:8px" ><b > Medication : </b>{{doc.item_name }} <br> <b>Dosage: </b>{{doc.dosage or ''}}</div>
+
+
+<p class="footer !important"> </p> 
+    </body>
+</html>
+
+
+
+
+
+
