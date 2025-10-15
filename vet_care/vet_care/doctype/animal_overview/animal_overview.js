@@ -194,6 +194,36 @@ frappe.ui.form.on('Animal Overview Item', {
 		_update_taxes_and_charges(frm);
 		_update_total(frm);
 	},
+ print: function (frm, cdt, cdn) {
+            const child = _get_child(cdt, cdn);
+         const data = {doc:{
+                doctype: "Animal Overview",
+                patient_name: frm.doc.animal_name || "-",
+                customer_name: frm.doc.default_owner || "—",
+                item_name: frm.doc.item_name || "—",
+                pb_sales_employee_name: frm.doc.sales_person || "",
+                dosage: frm.doc.dosage || "—",
+                company: frappe.user_defaults.company || "",
+                item_name : child.item_name || "—",
+                dosage : child.dosage || "—",
+                posting_date : frappe.datetime.nowdate(),
+            }};
+
+            frappe.call({
+                method: "vet_care.vet_care.doctype.animal_overview.animal_overview.get_print_dosage",
+                args: {
+                    doc: data,
+                    
+                },
+                callback: function (r) {
+                    if (!r.exc && r.message) {
+                        const w = window.open();
+                        $(w.document.body).html(r.message);
+                        w.print();
+                    }
+                },
+            });
+    },
 	item_code: async function(frm, cdt, cdn) {
 		const child = _get_child(cdt, cdn);
 		if (!child.qty) {
