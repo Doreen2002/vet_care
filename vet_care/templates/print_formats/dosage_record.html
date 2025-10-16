@@ -1,4 +1,4 @@
-  <html>
+  <html lang="en">
 <head>
 <title>Print Preview</title>
 <style>
@@ -52,7 +52,7 @@ margin: 10px;
 </head>
 <body>
     
-
+    {% for row in items %}
 
 		
 		<p class="text-center" style="font-size:8px">
@@ -69,10 +69,11 @@ margin: 10px;
 <div class = "flex justify-content" style="font-size:8px" > <div>Owner : {{doc.customer_name}}</div>
 <div style="font-size:8px" >Species : {{frappe.db.get_value("Patient", doc.patient, "vc_species")}}</div>
 </div>
-<div style="font-size:8px" ><b > Medication : </b>{{doc.item_name }} <br> <b>Dosage: </b>{{doc.dosage or ''}}</div>
+<div style="font-size:8px" ><b > Medication : </b>{{row.item_name }} <br> <b>Dosage: </b>{{row.dosage or ''}}</div>
 
-
+        </p>
 <p class="footer !important"> </p> 
+{% endfor %}
     </body>
 </html>
 

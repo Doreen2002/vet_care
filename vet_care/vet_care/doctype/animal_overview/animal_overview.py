@@ -22,6 +22,8 @@ class AnimalOverview(Document):
 def get_print_dosage(doc):
 	try:
 		doc=json.loads(doc)
+		doc['items'] = doc.get('doc').get('items')
+		# frappe.throw(f"{doc.get('doc').get('items')}")
 		return render_template("templates/print_formats/dosage_record.html", context=doc)
 	except Exception as e:
 		frappe.throw(_("Error in generating print format: {0}").format(e))
