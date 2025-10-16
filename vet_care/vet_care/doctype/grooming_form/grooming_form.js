@@ -31,7 +31,36 @@ frappe.ui.form.on("Grooming Form", {
 
         
 	},
-  
+    grooming_employee(frm)
+    {
+        frappe.call({
+            method:"vet_care.vet_care.doctype.grooming_form.grooming_form.get_grooming_employee_fullname",
+            args:{'employee':frm.doc.grooming_employee},
+            callback: function(r) { 
+                if(r.message)
+                {
+                    frm.set_value("grooming_employee_fullname", r.message); 
+                    frm.refresh_fields();
+                }
+            }
+        })
+        
+    },
+    groomer(frm)
+    {
+        frappe.call({
+            method:"vet_care.vet_care.doctype.grooming_form.grooming_form.get_groomer_fullname",
+            args:{'groomer':frm.doc.groomer},
+            callback: function(r) {
+                if(r.message)
+                {
+                     frm.set_value('groomer_fullname',r.message)
+                      frm.refresh_fields();
+                }
+            }
+        })
+       
+    },
     customer_name(frm)
     {
         frm.set_query('patient', 'grooming_patient_details', function (doc, cdt, cdn) {
