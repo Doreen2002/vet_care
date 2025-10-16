@@ -5,11 +5,12 @@
  "creation": "2025-09-25 13:59:38.865676",
  "doctype": "DocType",
  "engine": "InnoDB",
- "default_print_format":"Grooming Form",
  "field_order": [
   "grooming_employee",
+  "grooming_employee_fullname",
   "column_break_cxlh",
   "groomer",
+  "groomer_fullname",
   "section_break_gjoo",
   "amended_from",
   "customer_name",
@@ -307,14 +308,26 @@
   {
    "fieldname": "section_break_hmjp",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "grooming_employee_fullname",
+   "fieldtype": "Data",
+   "label": "Grooming Employee FullName",
+   "read_only": 1
+  },
+  {
+   "fieldname": "groomer_fullname",
+   "fieldtype": "Data",
+   "label": "Groomer FullName",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-13 17:00:17.049295",
- "modified_by": "test@gmail.com",
+ "modified": "2025-10-16 15:12:35.830560",
+ "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Grooming Form",
  "naming_rule": "Expression",
