@@ -4,13 +4,20 @@
 		font-family: arial;
 		line-height: 100%;
 		vertical-align: middle;
+  font-size:8px;
 		width: 95%;
 	}
+  * {
+    box-sizing: border-box;
+}
   @page {
 margin: 0; 
 padding: 0;
 }
-
+body, *{
+    margin: 0px;
+    padding: 0px;
+}
 
 	@media screen {
 		.print-format {
@@ -44,7 +51,7 @@ padding: 0;
 </style>
 
 {% for row in items %}
-
+{% if row.dosage %}
 <div class = "print-format">
 
 
@@ -82,4 +89,5 @@ padding: 0;
 </div>
 
 <div class="page-break"></div>
+{% endif %}
 {% endfor %}
