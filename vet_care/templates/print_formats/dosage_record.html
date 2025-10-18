@@ -1,42 +1,35 @@
-  <html lang="en">
-<head>
-<title>Print Preview</title>
-<style>
-@page {
-margin: 0; 
-}
-body {
-font-family: Arial, sans-serif;
-font-size: 10pt;
-margin: 10px;
-}
-.print-format table, .print-format tr, 
+<style id=label>
+	.print-format table, .print-format tr, 
 	.print-format td, .print-format div, .print-format p {
-			font-family: arial;
+		font-family: arial;
 		line-height: 100%;
-		vertical-align: middle;  
+		vertical-align: middle;
 		width: 95%;
 	}
+  @page {
+margin: 0; 
+padding: 0;
+}
+
+
 	@media screen {
 		.print-format {
 			width: 1.97in;
 			padding: 0.05in;
-			min-height: 0.70in;
+			min-height: 0.97in;
 			 
 		}
 	}
-    @media print {
-  footer {page-break-after: always;}
+.text-center{
+    text-align:center;
 }
 
 .flex{
     display:flex;
     justify-content:space-between;
-    margin:4px 2px;
-    }
-    .text-center
-    {
-        text-align:center;
+    margin:2px 2px;
+    overflow-wrap: normal;
+    word-wrap: normal;
     }
 *{
         font-family:Verdana;
@@ -46,37 +39,47 @@ margin: 10px;
     { font-weight:bold;
         
     }
-</style>
-</head>
-<body>
     
-    {% for row in items %}
+
+</style>
+
+{% for row in items %}
+
+<div class = "print-format">
+
 
 		
-		<p class="text-center" style="font-size:8px">
-<b class="text-center" style="font-size:8px"> {{doc.company }}</b> 
-<div class = "flex justify-content" style="font-size:8px" > <div><b>{{doc.pb_sales_employee_name }}  </b> </div></b>   
+		<p class="text-center" style="font-size:8px"><br>
+<b class="text-center" style="font-size:12px"> {{doc.company }}</b> 
+<div class = "flex justify-content" style="font-size:9px" > <div><b>{{frappe.db.get_value("Employee",doc.pb_sales_employee_name, "employee_name") or '' }}  </b> </div></b>   
 
-<div style="font-size:8px" ><b>PH: 39452112</b></div>
+<div style="font-size:9px" ><b>PH: 39452112</b></div>
 </div>
-<div class = "flex justify-content" style="font-size:8px" > <div>Pet Name : {{doc.patient_name}} </div></b>
-<div style="font-size:8px" >Date : {{ frappe.format(doc.posting_date, {'fieldtype':'Date'}) }}</div>
+<div class = "flex justify-content" style="font-size:8px" >
+    <div>Pet Name : {{doc.patient_name or ''}} </div></b>
+    <div style="font-size:8px" >Date : {{ frappe.format(doc.posting_date, {'fieldtype':'Date'}) }}</div>
+
+
 
 </div>
 
-<div class = "flex justify-content" style="font-size:8px" > <div>Owner : {{doc.customer_name}}</div>
-<div style="font-size:8px" >Species : {{frappe.db.get_value("Patient", doc.patient, "vc_species")}}</div>
-</div>
-<div style="font-size:8px" ><b > Medication : </b>{{row.item_name }} <br> <b>Dosage: </b>{{row.dosage or ''}}</div>
 
-        </p>
-<p class="footer !important"> </p> 
+<div class = "flex " style="font-size:8px; overflow:hidden;" >
+         <div>Owner : {{frappe.db.get_value('Customer',doc.customer_name, 'customer_name')}}</div>
+<div style="font-size:8px" >Species : {{frappe.db.get_value("Patient", doc.patient, "vc_species") or ''}}</div>
+
+</div>
+
+
+<div style="font-size:8px;" >
+<b > Medication : </b>{{row.item_name }} <br>
+<b style="font-size:8px">Dosage: </b> {{row.dosage or ''}}
+</div>
+
+
+
+
+</div>
+
+<div class="page-break"></div>
 {% endfor %}
-    </body>
-</html>
-
-
-
-
-
-
