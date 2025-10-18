@@ -8,12 +8,13 @@
   "default_print_format":"Admission Form",
  "field_order": [
   "client",
-  "customer_fullname", 
+  "customer_fullname",
   "address",
   "mobile",
   "cpr",
   "email",
   "invoice_no",
+  "remarks",
   "column_break_nvua",
   "date",
   "patient",
@@ -39,10 +40,10 @@
    "options": "Customer",
    "reqd": 1
   },
-   {
-   "fieldname": "customer_fullname", 
+  {
+   "fieldname": "customer_fullname",
    "fieldtype": "Data",
-   "label": "Customer FullName", 
+   "label": "Customer FullName",
    "read_only": 1
   },
   {
@@ -155,12 +156,17 @@
    "fieldname": "owner_or_the_responsible_party",
    "fieldtype": "Signature",
    "label": "OWNER OR THE RESPONSIBLE PARTY"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-09 12:56:14.787612",
+ "modified": "2025-10-18 11:20:27.382727",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Admission Form",
