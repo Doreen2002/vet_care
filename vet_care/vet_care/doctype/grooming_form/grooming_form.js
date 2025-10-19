@@ -7,7 +7,7 @@ frappe.ui.form.on("Grooming Form", {
                 const row = locals[cdt][cdn];
                 return {
                     filters: {
-                        customer: frm.doc.customer_name
+                        customer: ['in', [frm.doc.customer_name, 'PET20314']]
                     }
                 };
             });
@@ -64,13 +64,13 @@ frappe.ui.form.on("Grooming Form", {
     customer_name(frm)
     {
         frm.set_query('patient', 'grooming_patient_details', function (doc, cdt, cdn) {
-                const row = locals[cdt][cdn];
-                return {
-                    filters: {
-                        customer: frm.doc.customer_name
-                    }
-                };
-            });
+            const row = locals[cdt][cdn];
+            return {
+                filters: {
+                    customer: ['in', [frm.doc.customer_name, 'PET20314']]
+                }
+            };
+        });
         if(frm.doc.customer_name)
         {
             frappe.call({
