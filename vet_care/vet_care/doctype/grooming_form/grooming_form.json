@@ -333,7 +333,7 @@
    "fieldtype": "Select",
    "read_only": 1,
    "label": "Naming Series",
-   "options": "CGM-.#####\nPGM-.#####"
+   "options": "\nCGM-.#####\nPGM-.#####"
   },
   {
    "fieldname": "type_of_grooming",
