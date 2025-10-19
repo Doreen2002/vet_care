@@ -138,7 +138,7 @@
    "default": "0",
    "fieldname": "summer_cur",
    "fieldtype": "Check",
-   "label": "Summer Cur"
+   "label": "Summer Cut"
   },
   {
    "default": "0",
