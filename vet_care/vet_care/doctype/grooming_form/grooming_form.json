@@ -79,7 +79,10 @@
    "fieldname": "customer_name",
    "fieldtype": "Link",
    "label": "Customer Name",
-   "options": "Customer"
+   "options": "Customer",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
   },
   {
    "fieldname": "customer_fullname",
@@ -330,7 +333,7 @@
    "fieldtype": "Select",
    "read_only": 1,
    "label": "Naming Series",
-   "options": "GM-.#####\nCGM-.#####\nPGM-.#####"
+   "options": "\nCGM-.#####\nPGM-.#####"
   },
   {
    "fieldname": "type_of_grooming",
@@ -339,7 +342,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Type of Grooming",
-   "options": "Clinical\nPet Shop",
+   "options": "\nClinical\nPet Shop",
    "reqd": 1
   },
   {

@@ -33,8 +33,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Species",
-   "options": "Species",
-   "read_only": 1
+   "options": "Species"
   },
   {
    "fieldname": "size",
@@ -62,14 +61,13 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-10-13 17:23:51.002428",
- "modified_by": "test@gmail.com",
+ "modified": "2025-10-19 13:20:01.615717",
+ "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Grooming Patient Details",
  "owner": "test@gmail.com",
  "permissions": [],
  "row_format": "Dynamic",
- "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
