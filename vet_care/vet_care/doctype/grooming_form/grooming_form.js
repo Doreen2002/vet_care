@@ -7,7 +7,7 @@ frappe.ui.form.on("Grooming Form", {
                 const row = locals[cdt][cdn];
                 return {
                     filters: {
-                        customer: frm.doc.customer_name
+                        customer: ['in', [frm.doc.customer_name, 'PET20314']]
                     }
                 };
             });
@@ -61,16 +61,29 @@ frappe.ui.form.on("Grooming Form", {
         })
        
     },
+    type_of_grooming(frm)
+    {
+        if(frm.doc.type_of_grooming == "Clinical")
+        {
+            frm.set_value("naming_series", "CGM-.#####");          
+            frm.refresh_fields();
+        }
+        if(frm.doc.type_of_grooming == "Pet Shop")
+        {
+            frm.set_value("naming_series", "PGM-.#####");          
+            frm.refresh_fields();
+        }
+    },
     customer_name(frm)
     {
         frm.set_query('patient', 'grooming_patient_details', function (doc, cdt, cdn) {
-                const row = locals[cdt][cdn];
-                return {
-                    filters: {
-                        customer: frm.doc.customer_name
-                    }
-                };
-            });
+            const row = locals[cdt][cdn];
+            return {
+                filters: {
+                    customer: ['in', [frm.doc.customer_name, 'PET20314']]
+                }
+            };
+        });
         if(frm.doc.customer_name)
         {
             frappe.call({
