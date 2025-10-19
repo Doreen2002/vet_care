@@ -1,14 +1,16 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "GM-.#####",
+ "autoname": "naming_series:[naming_series]",
  "creation": "2025-09-25 13:59:38.865676",
  "doctype": "DocType",
  "engine": "InnoDB",
  "default_print_format": "Grooming Form",
  "field_order": [
+  "naming_series",
   "grooming_employee",
   "grooming_employee_fullname",
+  "type_of_grooming",
   "column_break_cxlh",
   "groomer",
   "groomer_fullname",
@@ -38,6 +40,7 @@
   "column_break_hxrl",
   "lion_cut",
   "clipper_blade_size",
+  "clipper_blade_size_data",
   "puppy_cut",
   "section_break_kzug",
   "basic_grooming",
@@ -321,17 +324,40 @@
    "fieldtype": "Data",
    "label": "Groomer FullName",
    "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "GM-.#####\nCGM-.#####\nPGM-.#####"
+  },
+  {
+   "fieldname": "type_of_grooming",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type of Grooming",
+   "options": "Clinical\nPet Shop",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.clipper_blade_size == 1",
+   "fieldname": "clipper_blade_size_data",
+   "fieldtype": "Data",
+   "label": "Clipper Blade Size"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-16 15:12:35.830560",
+ "modified": "2025-10-19 09:19:15.917100",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Grooming Form",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
