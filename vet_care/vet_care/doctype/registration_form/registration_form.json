@@ -5,7 +5,7 @@
  "creation": "2025-09-03 09:50:21.598232",
  "doctype": "DocType",
  "engine": "InnoDB",
-"default_print_format":"Registration form",
+ "default_print_format":"Registration form",
  "field_order": [
   "clients_name",
   "customer",
@@ -34,6 +34,7 @@
   "column_break_hrjm",
   "regular_diet",
   "previous_veterinarian",
+  "remarks",
   "section_break_splg",
   "html_editor_rvye",
   "agree_to_terms_and_conditions",
@@ -166,7 +167,7 @@
    "fieldname": "section_break_splg",
    "fieldtype": "Section Break"
   },
-   {
+  {
    "fieldname": "html_editor_rvye",
    "fieldtype": "HTML"
   },
@@ -220,13 +221,18 @@
   {
    "fieldname": "column_break_ijhk",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-06 19:02:05.173676",
+ "modified": "2025-10-19 09:05:57.753062",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Registration Form",

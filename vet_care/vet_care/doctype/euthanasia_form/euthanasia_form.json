@@ -30,6 +30,8 @@
   "body_wt",
   "section_break_hycg",
   "invoice",
+  "column_break_vvaf",
+  "remarks",
   "section_break_diun",
   "terms",
   "section_break_wsps",
@@ -54,10 +56,10 @@
    "options": "Customer",
    "reqd": 1
   },
-   {
-   "fieldname": "customer_fullname", 
+  {
+   "fieldname": "customer_fullname",
    "fieldtype": "Data",
-   "label": "Customer FullName", 
+   "label": "Customer FullName",
    "read_only": 1
   },
   {
@@ -226,13 +228,22 @@
   {
    "fieldname": "terms",
    "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_vvaf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-09 12:31:59.731883",
+ "modified": "2025-10-19 09:08:18.768559",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Euthanasia Form",
