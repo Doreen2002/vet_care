@@ -1,16 +1,28 @@
 // Copyright (c) 2025, 9T9IT and contributors
 // For license information, please see license.txt
 
+function set_patient_query(frm){
+    let walk_in_patient = '';
+        frappe.db.get_doc('Vetcare Settings').then(doc => {
+            if(doc)
+            {
+                walk_in_patient = doc.default_walk_in_patient;
+               
+            }
+        });
+        frm.set_query('patient', 'grooming_patient_details', function (doc, cdt, cdn) {
+            const row = locals[cdt][cdn];
+            return {
+                filters: {
+                    customer: ['in', [frm.doc.customer_name, walk_in_patient]]
+                }
+            };
+        });
+}
+
 frappe.ui.form.on("Grooming Form", {
 		refresh(frm) {
-        frm.set_query('patient', 'grooming_patient_details', function (doc, cdt, cdn) {
-                const row = locals[cdt][cdn];
-                return {
-                    filters: {
-                        customer: ['in', [frm.doc.customer_name, 'PET20314']]
-                    }
-                };
-            });
+            set_patient_query(frm);
 
         frappe.db.get_doc('VetCare Terms Settings').then(doc => {
             if(doc)
@@ -76,14 +88,7 @@ frappe.ui.form.on("Grooming Form", {
     },
     customer_name(frm)
     {
-        frm.set_query('patient', 'grooming_patient_details', function (doc, cdt, cdn) {
-            const row = locals[cdt][cdn];
-            return {
-                filters: {
-                    customer: ['in', [frm.doc.customer_name, 'PET20314']]
-                }
-            };
-        });
+        set_patient_query(frm);
         if(frm.doc.customer_name)
         {
             frappe.call({

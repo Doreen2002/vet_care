@@ -7,6 +7,7 @@
  "field_order": [
   "pos_profile",
   "date_format",
+  "default_walk_in_patient",
   "column_break_3",
   "skip_calendar",
   "enable_pb",
@@ -88,11 +89,17 @@
    "fieldtype": "Link",
    "label": "Patient",
    "options": "Patient"
+  },
+  {
+   "fieldname": "default_walk_in_patient",
+   "fieldtype": "Link",
+   "label": "Default Walk In Patient",
+   "options": "Patient"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-10-08 10:06:07.515328",
+ "modified": "2025-10-19 12:43:43.603787",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Vetcare Settings",
