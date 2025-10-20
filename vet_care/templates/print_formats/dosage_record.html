@@ -4,8 +4,8 @@
 		font-family: arial;
 		line-height: 100%;
 		vertical-align: middle;
-  font-size:8px;
-		width: 95%;
+        font-size:8px;
+        width: 95%;
 	}
   * {
     box-sizing: border-box;
@@ -62,21 +62,19 @@ body, *{
 
 <div style="font-size:9px" ><b>PH: 39452112</b></div>
 </div>
-<div class = "flex justify-content" style="font-size:8px" >
-    <div>Pet Name : {{doc.patient_name or ''}} </div></b>
-    <div style="font-size:8px" >Date : {{ frappe.format(doc.posting_date, {'fieldtype':'Date'}) }}</div>
-
-
-
+<div class="flex justify-content" style="font-size:8px; overflow:hidden;">
+  <div style="display:inline-block; max-width:60%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+    Pet Name : {{doc.patient_name or ''}}
+  </div>
+  <div style="font-size:8px;">Date : {{ frappe.format(doc.posting_date, {'fieldtype':'Date'}) }}</div>
 </div>
 
-
-<div class = "flex " style="font-size:8px; overflow:hidden;" >
-         <div>Owner : {{frappe.db.get_value('Customer',doc.customer_name, 'customer_name')}}</div>
-<div style="font-size:8px" >Species : {{frappe.db.get_value("Patient", doc.patient, "vc_species") or ''}}</div>
-
+<div class="flex" style="font-size:8px; overflow:hidden;">
+  <div style="display:inline-block; max-width:60%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+    Owner : {{ frappe.db.get_value('Customer', doc.customer_name, 'customer_name') }}
+  </div>
+  <div style="font-size:8px;">Species : {{ frappe.db.get_value("Patient", doc.patient, "vc_species") or '' }}</div>
 </div>
-
 
 <div style="font-size:8px;" >
 <b > Medication : </b>{{row.item_name }} <br>
