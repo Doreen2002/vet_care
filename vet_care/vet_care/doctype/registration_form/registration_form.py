@@ -13,24 +13,28 @@ def validate(self, method):
 	cpr_exists = frappe.db.exists("Customer", {"vc_cpr":self.cpr_no}) or  frappe.db.exists("Customer", {"cr_no":self.cpr_no})
 	mobile_no_exists = frappe.db.exists("Customer", {"mobile_number":self.mobile_no})
 	email_exists = frappe.db.exists("Customer", {"email_info":self.email})
-	if (cpr_exists  and self.cpr_no ) or (self.mobile_no and mobile_no_exists) or (self.email and email_exists):
-		frappe.throw("Customer ID already available with the cpr/mobile/email where the match is found.")
+	if self.existing_customer != 1:
+		if (cpr_exists  and self.cpr_no ) or (self.mobile_no and mobile_no_exists) or (self.email and email_exists):
+			frappe.throw("Customer ID already available with the cpr/mobile/email where the match is found.")
 def on_submit(self,method):
+	customer = None
 	if self.agree_to_terms_and_conditions != 1:
 		return frappe.throw("You must agree to the terms and conditions before submitting the form.")
-	customer = frappe.get_doc({
-		"doctype": "Customer",
-		"customer_name": self.clients_name,
-		"customer_type": "Individual",
-		"customer_group": "All Customer Groups",
-		"mobile_no": self.mobile_no,
-		"mobile_number": self.mobile_no,
-		"email_info": self.email,
-		"email_id": self.email,
-		"vc_cpr": self.cpr_no,
-		"vc_flat_no":self.address
-	})
-	customer.insert(ignore_permissions=True)
+	if self.existing_customer != 1:
+		customer = frappe.get_doc({
+			"doctype": "Customer",
+			"customer_name": self.clients_name,
+			"customer_type": "Individual",
+			"customer_group": "All Customer Groups",
+			"mobile_no": self.mobile_no,
+			"mobile_number": self.mobile_no,
+			"email_info": self.email,
+			"email_id": self.email,
+			"vc_cpr": self.cpr_no,
+			"vc_flat_no":self.address
+		})
+		customer.insert(ignore_permissions=True)
+		self.customer = customer.name
 	lines = []
 	if self.name_and_date_of_last_vaccine:
 		lines.append(f"Name and Date of Last Vaccine: {self.name_and_date_of_last_vaccine}")
@@ -48,7 +52,7 @@ def on_submit(self,method):
 		"first_name": self.patients_name,
 		"patient_name": self.patients_name,
 		"vc_breed": self.breed,
-		"customer": customer.name,
+		"customer": customer.name ,
 		"vc_species": self.species,
 		"sex":self.sex,
 		"vc_chip_id":self.microchip_number,
@@ -61,5 +65,4 @@ def on_submit(self,method):
 		"medical_history": medical_history
 	})
 	patient.insert(ignore_permissions=True)
-	self.customer = customer.name
 	self.patient = patient.name

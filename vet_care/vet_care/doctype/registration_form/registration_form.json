@@ -13,6 +13,7 @@
   "column_break_xdna",
   "date",
   "mobile_no",
+  "existing_customer",
   "column_break_sevy",
   "address",
   "email",
@@ -226,13 +227,19 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "default": "0",
+   "fieldname": "existing_customer",
+   "fieldtype": "Check",
+   "label": "Existing Customer"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-19 09:05:57.753062",
+ "modified": "2025-10-22 06:00:16.541091",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Registration Form",
