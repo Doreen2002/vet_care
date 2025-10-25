@@ -13,9 +13,11 @@ function set_patient_query(frm){
         frm.set_query('patient', 'grooming_patient_details', function (doc, cdt, cdn) {
             const row = locals[cdt][cdn];
             return {
+                query: 'vet_care.vet_care.doctype.grooming_form.grooming_form.get_patients_for_grooming',
                 filters: {
-                    customer: ['in', [frm.doc.customer_name, walk_in_patient]]
-                }
+                    customer_name: frm.doc.customer_name,
+                },
+                
             };
         });
 }
