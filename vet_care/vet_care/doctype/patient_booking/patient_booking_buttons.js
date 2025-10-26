@@ -4,9 +4,10 @@ function set_custom_buttons(frm) {
             label: __('Animal Overview'),
             onclick: async function() {
                 const sales_person = await _get_practitioner(frm.doc.physician);
-                await frappe.set_route('Form', 'Animal Overview');
-                frappe.model.set_value('Animal Overview', 'Animal Overview', 'animal', frm.doc.patient);
-                frappe.model.set_value('Animal Overview', 'Animal Overview', 'sales_person', sales_person.employee);
+                frappe.route_options = {'animal': frm.doc.patient, 'sales_person': sales_person.employee};
+                
+                frappe.set_route('Form', 'Animal Overview');
+               
             },
         }
     ];
