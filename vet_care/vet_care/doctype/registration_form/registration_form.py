@@ -52,7 +52,7 @@ def on_submit(self,method):
 		"first_name": self.patients_name,
 		"patient_name": self.patients_name,
 		"vc_breed": self.breed,
-		"customer": customer.name ,
+		"customer": customer.name if customer else '',
 		"vc_species": self.species,
 		"sex":self.sex,
 		"vc_chip_id":self.microchip_number,
