@@ -15,32 +15,8 @@ def get_data(data):
     })
     erpnext_data['transactions'].extend(
         [{
-                'label': _('Registration Form'),
-                'items': ['Registration Form']
-            },
-            {
-                'label': _('Sedation Form'),
-                'items': ['Sedation Form']
-            },
-            {
-                'label': _('Discharge Form'),
-                'items': ['Discharge Form']
-            },
-            {
-                'label': _('Grooming Form'),
-                'items': ['Grooming Form']
-            },
-            {
-                'label': _('Admission Form'),
-                'items': ['Admission Form']
-            },
-            {
-                'label': _('Surgery Consent Form'),
-                'items': ['Surgery Consent Form']
-            },
-            {
-                'label': _('Euthanasia Form'),
-                'items': ['Euthanasia Form']
+                'label': _('Vet Care'),
+                'items': ['Registration Form', 'Sedation Form', 'Discharge Form','Grooming Form','Admission Form', 'Surgery Consent Form','Euthanasia Form']
             }]
          )
     return erpnext_data
