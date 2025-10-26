@@ -34,7 +34,8 @@ def on_submit(self,method):
 			"vc_flat_no":self.address
 		})
 		customer.insert(ignore_permissions=True)
-		self.customer = customer.name
+		frappe.db.set_value("Registration Form", self.name, "customer", customer.name)
+		
 	lines = []
 	if self.name_and_date_of_last_vaccine:
 		lines.append(f"Name and Date of Last Vaccine: {self.name_and_date_of_last_vaccine}")
@@ -52,7 +53,7 @@ def on_submit(self,method):
 		"first_name": self.patients_name,
 		"patient_name": self.patients_name,
 		"vc_breed": self.breed,
-		"customer": customer.name ,
+		"customer": customer.name if customer else '',
 		"vc_species": self.species,
 		"sex":self.sex,
 		"vc_chip_id":self.microchip_number,
