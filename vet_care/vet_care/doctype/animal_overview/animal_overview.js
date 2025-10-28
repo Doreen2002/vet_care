@@ -27,9 +27,6 @@ frappe.ui.form.on('Animal Overview', {
         });
     },
     refresh: function(frm) {
-      cur_frm.fields_dict.invoice.$input.on("keydown.invoice_evt", function(e) { 
-        frm.trigger('invoice');
-      });
         if (frappe.route_options && frappe.route_options.animal) {
             frm.set_value('animal', frappe.route_options.animal);
             frappe.route_options = {};
