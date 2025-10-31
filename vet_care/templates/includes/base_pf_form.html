@@ -17,7 +17,7 @@
       <div class="data-field">Name: {{ doc.patient_fullname}}</div>
       <div class="data-field">Sex: {{ doc.sex }}</div>
       <div class="data-field">Weight: {{ doc.body_wt }} kg(s)</div>
-      <div class="data-field">Age: {{ calculate_age(doc.dob_age) }} yr(s) (born {{ doc.dob_age }})</div>
+      <div class="data-field">Age: {{ calculate_age(doc.dob_age) }} yr(s) (born {{ frappe.format (doc.dob_age, 'Date')  }})</div>
     </div>
     <div class="col-xs-6">
       <div class="data-field">Species: {{ doc.species}}</div>
@@ -25,10 +25,17 @@
       <div class="data-field">Colour: {{ doc.color }}</div>
     </div>
   </div>
+  
+  
+
   <div class="row block">
     <header class="lead">Procedure</header>
     {% block procedure %}{% endblock %}
   </div>
+
+  </div>
+
+  <div class="row block" style="margin-top: 5px;">Remarks : {{doc.remarks or ''}}</div>
   <table style="width:100%; margin-top:20px; font-size: 12px; border-collapse:collapse;">
     <tr>
   
@@ -69,7 +76,7 @@
               
            
             
-                <div style="margin-top: 45px; font-size: 12px;">{{ frappe.utils.today()  }}</div>
+                <div style="margin-top: 45px; font-size: 12px;">{{ frappe.format (doc.creation, 'Date') }}</div>
              
               <div class="under" style="width: 100px; font-size: 12px; "  >Date</div>
             </td>
