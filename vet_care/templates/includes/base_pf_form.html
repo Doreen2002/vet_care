@@ -6,7 +6,7 @@
   }
 </style>
 
-<div class="letter-head">{{ letter_head }}</div>
+<div class="letter-head">{{ letter_head or '' }}</div>
 
 <div class="main-content">
   <h1 class="text-center">{% block title %}{% endblock %}</h1>
@@ -14,15 +14,15 @@
   <div class="row block">
     <header class="lead">Animal Details</header>
     <div class="col-xs-6">
-      <div class="data-field">Name: {{ doc.patient_name }}</div>
+      <div class="data-field">Name: {{ doc.patient_fullname}}</div>
       <div class="data-field">Sex: {{ doc.sex }}</div>
-      <div class="data-field">Weight: {{ doc.vc_weight }} kg(s)</div>
-      <div class="data-field">Age: {{ calculate_age(doc.dob) }} yr(s) (born {{ doc.dob }})</div>
+      <div class="data-field">Weight: {{ doc.body_wt }} kg(s)</div>
+      <div class="data-field">Age: {{ calculate_age(doc.dob_age) }} yr(s) (born {{ doc.dob_age }})</div>
     </div>
     <div class="col-xs-6">
-      <div class="data-field">Species: {{ doc.vc_species }}</div>
-      <div class="data-field">Breed: {{ doc.vc_breed }}</div>
-      <div class="data-field">Colour: {{ doc.vc_color }}</div>
+      <div class="data-field">Species: {{ doc.species}}</div>
+      <div class="data-field">Breed: {{ doc.breed }}</div>
+      <div class="data-field">Colour: {{ doc.color }}</div>
     </div>
   </div>
   <div class="row block">

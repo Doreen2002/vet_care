@@ -304,8 +304,8 @@ override_doctype_dashboards = {
 	"Customer": "vet_care.config.customer_dashboard.get_data"
 }
 
-jenv = {
+jinja  = {
     "methods": [
-        "calculate_age:vet_care.utils.calculate_age"
+        "vet_care.utils.calculate_age"
     ]
 }
