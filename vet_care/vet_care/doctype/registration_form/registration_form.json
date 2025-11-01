@@ -232,7 +232,8 @@
    "default": "0",
    "fieldname": "existing_customer",
    "fieldtype": "Check",
-   "label": "Existing Customer"
+   "label": "Existing Customer",
+   "hidden":0
   }
  ],
  "grid_page_length": 50,

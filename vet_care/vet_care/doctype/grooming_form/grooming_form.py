@@ -25,3 +25,23 @@ def get_groomer_fullname(groomer):
 def get_grooming_employee_fullname(employee):
 	emp = frappe.get_doc("Employee", employee)
 	return emp.employee_name
+
+@frappe.whitelist()
+def get_patients_for_grooming(doctype, txt, searchfield, start, page_len, filters):
+    customer = filters.get("customer_name")
+    
+    # get value from settings
+    walk_in_patient = frappe.db.get_single_value("Vetcare Settings", "default_walk_in_patient")
+
+    return frappe.db.sql("""
+        SELECT name, patient_name
+        FROM `tabPatient`
+        WHERE (customer = %(customer)s OR name = %(walk_in)s)
+        LIMIT %(start)s, %(page_len)s
+    """, {
+        "customer": customer,
+        "walk_in": walk_in_patient,
+        "txt": "%{}%".format(txt),
+        "start": start,
+        "page_len": page_len
+    })

@@ -414,6 +414,7 @@ function _set_actions(frm) {
 			const data = {doc:{
         doctype: "Animal Overview",
         patient_name: frm.doc.animal_name || "-",
+        animal: frm.doc.animal || "-",
         customer_name: frm.doc.default_owner || "—",
         item_name: frm.doc.item_name || "—",
         pb_sales_employee_name: frm.doc.sales_person || "",
