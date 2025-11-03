@@ -5,7 +5,6 @@
  "creation": "2025-09-25 13:59:38.865676",
  "doctype": "DocType",
  "engine": "InnoDB",
-"default_print_format": "Grooming Form",
  "field_order": [
   "naming_series",
   "grooming_employee",
@@ -285,7 +284,7 @@
   {
    "fieldname": "grooming_employee",
    "fieldtype": "Link",
-   "label": "Grooming Employee",
+   "label": "Sales Employee",
    "options": "Employee"
   },
   {
@@ -321,7 +320,7 @@
   {
    "fieldname": "grooming_employee_fullname",
    "fieldtype": "Data",
-   "label": "Grooming Employee FullName",
+   "label": "Sales Employee FullName",
    "read_only": 1
   },
   {
@@ -370,7 +369,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-01 13:57:30.435612",
+ "modified": "2025-11-03 09:46:27.803943",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Grooming Form",
