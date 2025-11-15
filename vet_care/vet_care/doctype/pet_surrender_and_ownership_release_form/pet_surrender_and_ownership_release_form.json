@@ -1,0 +1,194 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "PSR-.#####",
+ "creation": "2025-11-12 15:24:18.618877",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "owners_name",
+  "full_name",
+  "column_break_rscu",
+  "cpr__id",
+  "phone_number",
+  "pet_details_section",
+  "pet_name",
+  "pets_name",
+  "date_of_birth__age",
+  "gender",
+  "column_break_yhea",
+  "breed",
+  "species",
+  "color__markings",
+  "microchip_no",
+  "section_break_qxnk",
+  "terms",
+  "agree_to_terms_and_conditions",
+  "section_break_xsxj",
+  "owners_signature",
+  "column_break_npvb",
+  "clinic_representative_name",
+  "signature"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "owners_name",
+   "fieldtype": "Link",
+   "label": "Owner's Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "cpr__id",
+   "fieldtype": "Data",
+   "label": "CPR / ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pet_details_section",
+   "fieldtype": "Section Break",
+   "label": "Pet Details"
+  },
+  {
+   "fieldname": "pet_name",
+   "fieldtype": "Table MultiSelect",
+   "label": "Pet Name",
+   "options": "Patient MultiSelect"
+  },
+  {
+   "fieldname": "species",
+   "fieldtype": "Data",
+   "label": "Species",
+   "read_only": 1
+  },
+  {
+   "fieldname": "breed",
+   "fieldtype": "Data",
+   "label": "Breed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_of_birth__age",
+   "fieldtype": "Data",
+   "label": "Date of Birth / Age",
+   "read_only": 1
+  },
+  {
+   "fieldname": "color__markings",
+   "fieldtype": "Data",
+   "label": "Color / Markings",
+   "read_only": 1
+  },
+  {
+   "fieldname": "microchip_no",
+   "fieldtype": "Data",
+   "label": "Microchip No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xsxj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "owners_signature",
+   "fieldtype": "Signature",
+   "label": "Owner's Signature"
+  },
+  {
+   "fieldname": "column_break_npvb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "clinic_representative_name",
+   "fieldtype": "Data",
+   "label": "Clinic Representative Name"
+  },
+  {
+   "depends_on": "eval: doc.agree_to_terms_and_conditions == 1",
+   "fieldname": "signature",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "section_break_qxnk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "agree_to_terms_and_conditions",
+   "fieldtype": "Check",
+   "label": "Agree to Terms and Conditions"
+  },
+  {
+   "fieldname": "terms",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "pets_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yhea",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rscu",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-13 16:49:59.227048",
+ "modified_by": "Administrator",
+ "module": "Vet Care",
+ "name": "Pet Surrender and Ownership Release Form",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

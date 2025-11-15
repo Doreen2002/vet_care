@@ -13,7 +13,8 @@
   "column_break_k7re",
   "surgery_form",
   "euthanasia_terms",
-  "grooming_terms"
+  "grooming_terms",
+  "pet_surrender_ownership"
  ],
  "fields": [
   {
@@ -58,12 +59,17 @@
    "fieldname": "registration_terms",
    "fieldtype": "HTML Editor",
    "label": "Registration Terms"
+  },
+  {
+   "fieldname": "Pet Surrender and  Ownership",
+   "fieldtype": "HTML Editor",
+   "label": "pet_surrender_ownership"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-10-12 17:39:32.288617",
- "modified_by": "test@gmail.com",
+ "modified": "2025-11-12 17:31:34.893828",
+ "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "VetCare Terms Settings",
  "owner": "Administrator",
