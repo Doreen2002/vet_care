@@ -61,14 +61,14 @@
    "label": "Registration Terms"
   },
   {
-   "fieldname": "Pet Surrender and  Ownership",
+   "fieldname": "pet_surrender_ownership",
    "fieldtype": "HTML Editor",
-   "label": "pet_surrender_ownership"
+   "label": "Pet Surrender Ownership"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-11-12 17:31:34.893828",
+ "modified": "2025-11-16 11:22:56.789330",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "VetCare Terms Settings",
