@@ -30,7 +30,7 @@ def get_patient_details(patient):
 		color_parts.append(patient_doc.vc_color if patient_doc.vc_color else '')
 		species_parts.append(patient_doc.vc_species if patient_doc.vc_species else '')
 		vc_chip_id_parts.append(patient_doc.vc_chip_id if patient_doc.vc_chip_id else '')
-		dob_parts.append(str(patient_doc.dob) if patient_doc.dob else '')
+		dob_parts.append(frappe.format(str(patient_doc.dob), {"fieldtype":"Date"}) if patient_doc.dob else '')
 		vc_neutered_parts.append(patient_doc.vc_neutered if patient_doc.vc_neutered else '')
 		patient_name_parts.append(patient_doc.patient_name if patient_doc.patient_name else '' )
 	breed = ', '.join(breed_parts)
