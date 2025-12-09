@@ -5,7 +5,6 @@
  "creation": "2025-09-07 11:19:32.115567",
  "doctype": "DocType",
  "engine": "InnoDB",
- "default_print_format":"Euthanasia New",
  "field_order": [
   "section_break_vnnf",
   "date",
@@ -32,11 +31,14 @@
   "invoice",
   "column_break_vvaf",
   "remarks",
-  "section_break_diun",
-  "terms",
   "section_break_wsps",
   "veterinarian_name",
   "agree_to_terms_and_conditions",
+  "column_break_lmcw",
+  "authorized_person",
+  "authorized_persons_cpr",
+  "section_break_diun",
+  "terms",
   "section_break_uwwh",
   "owner_or_responsible_party",
   "column_break_plpm",
@@ -237,13 +239,27 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fieldname": "authorized_person",
+   "fieldtype": "Data",
+   "label": "Authorized Person"
+  },
+  {
+   "fieldname": "column_break_lmcw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "authorized_persons_cpr",
+   "fieldtype": "Data",
+   "label": "Authorized Person's CPR"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-19 09:08:18.768559",
+ "modified": "2025-12-08 13:32:22.527299",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Euthanasia Form",
