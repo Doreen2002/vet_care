@@ -5,7 +5,6 @@
  "creation": "2025-09-25 13:59:38.865676",
  "doctype": "DocType",
  "engine": "InnoDB",
- "default_print_format": "Grooming Form",
  "field_order": [
   "naming_series",
   "grooming_employee",
@@ -357,7 +356,7 @@
    "fieldname": "grooming_location",
    "fieldtype": "Select",
    "label": "Grooming Location",
-   "options": "Shop\nMobile"
+   "options": "Shop\nMobile\nIsolation room"
   },
   {
    "depends_on": "eval:doc.grooming_location=='Mobile'",
@@ -370,7 +369,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-03 09:46:27.803943",
+ "modified": "2026-01-19 14:04:10.809977",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Grooming Form",
