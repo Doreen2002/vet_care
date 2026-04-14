@@ -74,9 +74,6 @@ fixtures = [
         ]
     },
     {
-        "doctype":"VetCare Terms Settings"
-    },
-    {
         "doctype": "Property Setter",
         "filters": [
             [
