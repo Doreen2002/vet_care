@@ -10,6 +10,7 @@
   "sedation_terms",
   "discharge_terms",
   "registration_terms",
+  "orthopedic_surgery_form",
   "column_break_k7re",
   "surgery_form",
   "euthanasia_terms",
@@ -64,11 +65,16 @@
    "fieldname": "pet_surrender_ownership",
    "fieldtype": "HTML Editor",
    "label": "Pet Surrender Ownership"
+  },
+  {
+   "fieldname": "orthopedic_surgery_form",
+   "fieldtype": "HTML Editor",
+   "label": "Orthopedic Surgery Form"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-11-16 11:22:56.789330",
+ "modified": "2026-04-18 09:23:19.367112",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "VetCare Terms Settings",
