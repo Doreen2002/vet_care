@@ -72,7 +72,8 @@ fixtures = [
                     "Item-custom_medicine_name",
                     "Item-custom_active_ingredient",
                     "Item-custom_concentration",
-                    "Item-custom_package"
+                    "Item-custom_package",
+                    "Item-custom_medicine_group"
                     
                 ]
             ]
