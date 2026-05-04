@@ -76,11 +76,11 @@ def execute(filters=None):
 		item_filters["name"] = filters.get("item_code")
 	if filters.get('group_by_medicine_group'):
 		group_by = 'medicine_group'
-	items = frappe.db.get_all("Item", filters=item_filters, fields=["name", "item_name", "image", "custom_medicine_name as medicine_name", "custom_medicine_group as medicine_group", "custom_active_ingredient as active_ingredient", "custom_concentration as concentration", "custom_package as packaging"], group_by=group_by)	
+	items = frappe.db.get_all("Item", filters=item_filters, fields=["name", "stock_uom", "item_name", "image", "custom_medicine_name as medicine_name", "custom_medicine_group as medicine_group", "custom_active_ingredient as active_ingredient", "custom_concentration as concentration", "custom_package as packaging"], group_by=group_by)	
 	data = []
 	for item in items:
 		item["image"] = f'<img src="{frappe.utils.get_url()}{item["image"]}" width="50" height="100">' if item["image"] else ""
-		item['wholesale_price'] = frappe.db.get_value("Item Price", {"item_code": item['name'], "price_list": "Wholesale"}, "price_list_rate") or 0
-		item['retail_price'] = frappe.db.get_value("Item Price", {"item_code": item['name'], "price_list": "Retail"}, "price_list_rate") or 0
+		item['wholesale_price'] = frappe.db.get_value("Item Price", {"item_code": item['name'], "buying":1, "uom": item['stock_uom']}, "price_list_rate") or 0
+		item['retail_price'] = frappe.db.get_value("Item Price", {"item_code": item['name'], "selling":1, "uom": item['stock_uom']}, "price_list_rate") or 0
 		data.append(item)
 	return columns, data
