@@ -40,7 +40,7 @@ def execute(filters=None):
 		{
 			"fieldname": "active_ingredient",
 			"label": "Active Ingredient",
-			"fieldtype": "Data",
+			"fieldtype": "Small Text",
 			
 		},
 		{
