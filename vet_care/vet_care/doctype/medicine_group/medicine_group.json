@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:medicine_group",
  "creation": "2026-05-03 14:10:46.080992",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -56,17 +57,19 @@
   {
    "fieldname": "medicine_group",
    "fieldtype": "Data",
-   "label": "Medicine Group"
+   "label": "Medicine Group",
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2026-05-03 14:11:06.052905",
+ "modified": "2026-05-10 17:19:36.081088",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Medicine Group",
+ "naming_rule": "By fieldname",
  "nsm_parent_field": "parent_medicine_group",
  "owner": "Administrator",
  "permissions": [
