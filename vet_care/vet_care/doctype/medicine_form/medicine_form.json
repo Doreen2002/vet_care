@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:medicine_form",
  "creation": "2026-05-06 16:53:33.163977",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,16 +12,18 @@
   {
    "fieldname": "medicine_form",
    "fieldtype": "Data",
-   "label": "Medicine Form"
+   "label": "Medicine Form",
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-06 16:54:51.892602",
+ "modified": "2026-05-10 17:20:01.858001",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Medicine Form",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
