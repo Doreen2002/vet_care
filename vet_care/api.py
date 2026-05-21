@@ -115,7 +115,6 @@ def get_medical_records(patient):
 @frappe.whitelist()
 def save_invoice(items, patient, customer, **kwargs):
     items = json.loads(items)
-    validate_medicine_for_dosage(items)
     sales_person = kwargs.get("sales_person")
     existing_invoice = kwargs.get("existing_invoice")
     discount_amount = kwargs.get("discount_amount")
