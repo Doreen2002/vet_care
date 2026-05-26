@@ -1,5 +1,66 @@
 import frappe
+from erpnext.stock.doctype.warehouse.warehouse import get_child_warehouses
 
+def custom_get_qty_amount_data_for_cumulative(pr_doc, doc, items=None):
+    if items is None:
+        items = []
+    sum_qty, sum_amt = [0, 0]
+    doctype = doc.get("parenttype") or doc.doctype
+
+    date_field = (
+        "transaction_date" if frappe.get_meta(doctype).has_field("transaction_date") else "posting_date"
+    )
+
+    child_doctype = f"{doctype} Item"
+    apply_on = frappe.scrub(pr_doc.get("apply_on"))
+
+    values = [pr_doc.valid_from, pr_doc.valid_upto]
+    condition = ""
+
+    if pr_doc.warehouse:
+        warehouses = get_child_warehouses(pr_doc.warehouse)
+
+        condition += """ and `tab{child_doc}`.warehouse in ({warehouses})
+            """.format(child_doc=child_doctype, warehouses=",".join(["%s"] * len(warehouses)))
+
+        values.extend(warehouses)
+
+    if items:
+        condition += " and `tab{child_doc}`.{apply_on} in ({items})".format(
+            child_doc=child_doctype, apply_on=apply_on, items=",".join(["%s"] * len(items))
+        )
+
+        values.extend(items)
+
+    data_set = frappe.db.sql(
+        f""" SELECT `tab{child_doctype}`.stock_qty,
+            `tab{child_doctype}`.amount,
+             `tab{child_doctype}`.parent
+        FROM `tab{child_doctype}`, `tab{doctype}`
+        WHERE
+            `tab{child_doctype}`.parent = `tab{doctype}`.name and `tab{doctype}`.{date_field}
+            between %s and %s and `tab{doctype}`.docstatus = 1
+            {condition} group by `tab{child_doctype}`.name
+    """,
+        tuple(values),
+        as_dict=1,
+    )
+    
+    parent_turple = []
+    for data in data_set:
+        sum_qty += data.get("stock_qty")
+        sum_amt += data.get("amount")
+        parent_turple.append(data.get("parent"))
+    parents = list(set(parent_turple))
+    total_qty = 0.0
+    for par in parents:
+        pricing_details = frappe.db.get_all("Pricing Rule Detail", filters={"parent": par, "docstatus":1, "pricing_rule":pr_doc.get("name")}, fields=['name'])
+        if pricing_details:
+            for pricing in pricing_details:
+                total_qty = total_qty + pr_doc.get('min_qty') + 1 if pr_doc.get("free_item") else 0
+    sum_qty = sum_qty - total_qty
+    return [sum_qty, sum_amt]
+    
 @frappe.whitelist()
 def get_room_events(healthcare_practitioner):
     formatted_events = []
