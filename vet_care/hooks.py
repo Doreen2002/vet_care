@@ -312,8 +312,3 @@ jinja  = {
         "vet_care.utils.calculate_age"
     ]
 }
-
-import erpnext.accounts.doctype.pricing_rule.utils as utils_file
-import vet_care.custom_code.api as vet_care_api_file
-
-utils_file.get_qty_amount_data_for_cumulative = vet_care_api_file.custom_get_qty_amount_data_for_cumulative
