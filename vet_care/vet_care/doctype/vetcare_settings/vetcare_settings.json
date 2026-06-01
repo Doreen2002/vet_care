@@ -17,7 +17,9 @@
   "apply_custom_fields",
   "no_sb",
   "no_appointment_type",
-  "no_patient"
+  "no_patient",
+  "section_break_zkmf",
+  "full_grooming_service_pricing_rule"
  ],
  "fields": [
   {
@@ -95,11 +97,22 @@
    "fieldtype": "Link",
    "label": "Default Walk In Patient",
    "options": "Patient"
+  },
+  {
+   "fieldname": "section_break_zkmf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "full_grooming_service_pricing_rule",
+   "fieldtype": "Link",
+   "label": "Full Grooming Service Pricing Rule",
+   "mask": 1,
+   "options": "Pricing Rule"
   }
  ],
  "issingle": 1,
  "links": [],
- "modified": "2025-10-19 12:43:43.603787",
+ "modified": "2026-06-01 08:26:33.356519",
  "modified_by": "Administrator",
  "module": "Vet Care",
  "name": "Vetcare Settings",
