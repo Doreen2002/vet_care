@@ -1,5 +1,5 @@
 import frappe
-
+ 
 @frappe.whitelist()
 def get_room_events(healthcare_practitioner):
     formatted_events = []

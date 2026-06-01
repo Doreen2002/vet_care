@@ -73,7 +73,9 @@ fixtures = [
                     "Item-custom_active_ingredient",
                     "Item-custom_concentration",
                     "Item-custom_package",
-                    "Item-custom_medicine_group"
+                    "Item-custom_medicine_group",
+                    "Customer-custom_full_service_loyalty_count",
+                    "Sales Invoice-custom_full_service_loyalty_count"
                     
                 ]
             ]
@@ -148,7 +150,8 @@ fixtures = [
                     "Customer-search_fields",
                     "Patient-sort_field",
                     "Patient-search_fields",
-                    "Patient-quick_entry"
+                    "Patient-quick_entry",
+                    
                 ]
             ]
         ]
@@ -246,7 +249,8 @@ doc_events = {
         "validate": "vet_care.doc_events.patient_appointment.validate"
     },
     "Sales Invoice": {
-        "validate": "vet_care.doc_events.sales_invoice.validate"
+        "validate": "vet_care.doc_events.sales_invoice.validate",
+        "on_submit": "vet_care.doc_events.sales_invoice.on_submit"
     },
     "Contact": {
         "validate": "vet_care.doc_events.contact.validate"
@@ -312,3 +316,5 @@ jinja  = {
         "vet_care.utils.calculate_age"
     ]
 }
+
+
