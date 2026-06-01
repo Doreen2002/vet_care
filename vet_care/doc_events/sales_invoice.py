@@ -16,17 +16,19 @@ def _is_pet_related_to(pet, customer):
 
 
 def on_submit(doc, method):
+    settings = frappe.get_doc("Vetcare Settings")
+    pricing_rule_name = settings.full_grooming_service_pricing_rule
+    pricing_rule_items = frappe.db.get_all("Pricing Rule Item Code", filters={"parent": pricing_rule_name}, pluck="item_code")
     if doc.pricing_rules:
         for pr in doc.pricing_rules:
-            pricing_rule_name = frappe.db.get_value("Pricing Rule", {"title":"Full Grooming Service"}, "name")
-            if pr.pricing_rule == pricing_rule_name and pr.item_code == "Full Grooming Service":
+            if pr.pricing_rule == pricing_rule_name and pr.item_code in pricing_rule_items:
                     customer = frappe.get_doc("Customer", doc.customer)
                     customer.custom_full_service_loyalty_count = 0
                     customer.save()
                     frappe.db.commit()
     elif doc.items:
         for item in doc.items:
-            if item.item_code == "Full Grooming Service":
+            if item.item_code in pricing_rule_items:
                 customer = frappe.get_doc("Customer", doc.customer)
                 customer.custom_full_service_loyalty_count += item.qty
                 customer.save()
