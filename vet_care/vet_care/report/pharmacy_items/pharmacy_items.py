@@ -66,6 +66,12 @@ def execute(filters=None):
 		}
 
 	]
+	if filters.get("warehouse"):
+		columns.append({
+			"fieldname": "stock",
+			"label": "Stock",
+			"fieldtype": "Float",
+		})
 	group_by = ''
 	item_filters = {"custom_pharmacy_item":1}
 	if filters.get("medicine_group"):
@@ -82,5 +88,7 @@ def execute(filters=None):
 		item["image"] = f'<img src="{frappe.utils.get_url()}{item["image"]}" width="50" height="100">' if item["image"] else ""
 		item['wholesale_price'] = frappe.db.get_value("Item Price", {"item_code": item['name'], "buying":1, "uom": item['stock_uom']}, "price_list_rate") or 0
 		item['retail_price'] = frappe.db.get_value("Item Price", {"item_code": item['name'], "selling":1, "uom": item['stock_uom']}, "price_list_rate") or 0
+		if filters.get("warehouse"):
+			item['stock'] = frappe.db.get_value("Bin", {"item_code": item['name'], "warehouse": filters.get("warehouse")}, "actual_qty") or 0
 		data.append(item)
 	return columns, data

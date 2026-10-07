@@ -27,6 +27,12 @@ frappe.query_reports["Pharmacy Items"] = {
 			"label": __(" Group by Medicine Group"),
 			"fieldtype": "Check",
 		
+		},
+		{
+			"fieldname": "warehouse",
+			"label": __("Warehouse"),
+			"fieldtype": "Link",
+			"options": "Warehouse"
 		}
 	]
 };
